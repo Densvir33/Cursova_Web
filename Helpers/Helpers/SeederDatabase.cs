@@ -50,17 +50,17 @@ namespace Helpers.Helpers
                 Email = email,
                 UserName = email
             };
-            var dasha = new User
+            var user = new User
             {
-                Email = "dasha.gryb@gmail.com",
-                UserName = "dasha.gryb@gmail.com"
+                Email = "user.user@gmail.com",
+                UserName = "user.user@gmail.com"
             };
 
             var resultAdmin = userManager.CreateAsync(admin, "Qwerty1-").Result;
             resultAdmin = userManager.AddToRoleAsync(admin, "Admin").Result;
 
-            var resultDasha = userManager.CreateAsync(dasha, "Qwerty1-").Result;
-            resultDasha = userManager.AddToRoleAsync(dasha, "Guest").Result;
+            var resultUser = userManager.CreateAsync(user, "Qwerty1-").Result;
+            resultUser = userManager.AddToRoleAsync(user, "Guest").Result;
         }
     }
 }

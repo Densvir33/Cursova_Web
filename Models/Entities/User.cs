@@ -7,7 +7,7 @@ namespace Models.Entities
 {
     public class User : IdentityUser
     {
-        public virtual UserAdditionalInfo UserAdditionalInfo { get; set; }
+        public virtual UserInfo UserInfo { get; set; }
 
     }
 }

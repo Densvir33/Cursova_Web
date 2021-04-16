@@ -1,0 +1,9 @@
+/.vs
+/Helpers/bin
+/Helpers/obj
+/Models/bin
+/Models/obj
+/Service/bin
+/Service/obj
+/Store/bin
+/Store/obj

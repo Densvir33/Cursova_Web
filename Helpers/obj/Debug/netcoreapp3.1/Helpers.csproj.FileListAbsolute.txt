@@ -12,3 +12,17 @@ C:\Users\Дім\source\repos\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Service
 C:\Users\Дім\source\repos\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
 C:\Users\Дім\source\repos\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 C:\Users\Дім\source\repos\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csprojAssemblyReference.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete

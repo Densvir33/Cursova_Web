@@ -9,3 +9,15 @@ C:\Users\Дім\source\repos\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.p
 C:\Users\Дім\source\repos\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.runtimeconfig.json
 C:\Users\Дім\source\repos\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.runtimeconfig.dev.json
 C:\Users\Дім\source\repos\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.genruntimeconfig.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.deps.json
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.runtimeconfig.json
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.runtimeconfig.dev.json
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.csprojAssemblyReference.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Models\obj\Debug\netcoreapp3.1\Models.genruntimeconfig.cache

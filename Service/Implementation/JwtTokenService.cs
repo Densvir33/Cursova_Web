@@ -29,7 +29,7 @@ namespace Service.Implementation
         public string CreateToken(User user)
         {
             var roles = _userManager.GetRolesAsync(user).Result;
-            var fullName = _context.UserAdditionalInfos.FirstOrDefault(t => t.Id == user.Id).FullName;
+            var fullName = _context.UserInfos.FirstOrDefault(t => t.Id == user.Id).FullName;
             var claims = new List<Claim>()
             {
                 //new Claim(JwtRegisteredClaimNames.Sub, user.Id)
