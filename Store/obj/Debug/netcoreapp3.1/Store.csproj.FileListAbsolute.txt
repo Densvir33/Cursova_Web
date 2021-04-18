@@ -144,3 +144,5 @@ C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\obj\Debug\netcoreapp3.1\sco
 C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\obj\Debug\netcoreapp3.1\Store.RazorTargetAssemblyInfo.cache
 C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\obj\Debug\netcoreapp3.1\Store.csproj.CopyComplete
 C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\obj\Debug\netcoreapp3.1\Store.genruntimeconfig.cache
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Anton\Cod\ANGULAG_CURSOVA\Cursova_Web\Store\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

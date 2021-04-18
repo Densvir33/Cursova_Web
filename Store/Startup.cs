@@ -72,6 +72,9 @@ namespace Store
                 };
             });
 
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -96,7 +99,7 @@ namespace Store
                 endpoints.MapControllers();
             });
 
-            SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
+            //SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
         }
     }
 }

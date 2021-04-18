@@ -6,6 +6,6 @@ namespace Models.DTO.ResultDTO
 {
     public class CollectionResultDTO<T>: ResultDTO
     {
-        public ICollection<T> Data { get; set; }
+        public T Data { get; set; }
     }
 }

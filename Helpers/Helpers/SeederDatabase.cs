@@ -22,6 +22,8 @@ namespace Helpers.Helpers
                 var managerRole = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var context = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
                 SeedUsers(manager, managerRole);
+
+                SeedProduct(context);
             }
         }
         private static void SeedUsers(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
@@ -61,6 +63,21 @@ namespace Helpers.Helpers
 
             var resultUser = userManager.CreateAsync(user, "Qwerty1-").Result;
             resultUser = userManager.AddToRoleAsync(user, "Guest").Result;
+        }
+
+        private static void SeedProduct(ApplicationContext _context)
+        {
+            var products = new List<Product>
+            {
+                    new Product
+                    {
+                        Name = "Potato"
+                        
+                    },
+            };
+
+            _context.Products.AddRange(products);
+            _context.SaveChanges();
         }
     }
 }
