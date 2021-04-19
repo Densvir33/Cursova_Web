@@ -6548,24 +6548,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anton\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ernendo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Store\\Store.csproj",
+      "projectUniqueName": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Store\\Store.csproj",
       "projectName": "Store",
-      "projectPath": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Store\\Store.csproj",
-      "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Store\\obj\\",
+      "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Store\\Store.csproj",
+      "packagesPath": "C:\\Users\\ernendo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Store\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ernendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6579,14 +6578,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Helpers\\Helpers.csproj": {
-              "projectPath": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Helpers\\Helpers.csproj"
+            "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj": {
+              "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj"
             },
-            "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Models\\Models.csproj"
+            "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj"
             },
-            "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\Anton\\Cod\\ANGULAG_CURSOVA\\Cursova_Web\\Service\\Service.csproj"
+            "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj"
             }
           }
         }
@@ -6642,7 +6641,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
