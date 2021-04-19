@@ -34,3 +34,15 @@ C:\Users\ernendo\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Se
 C:\Users\ernendo\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
 C:\Users\ernendo\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.dll
 C:\Users\ernendo\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.pdb

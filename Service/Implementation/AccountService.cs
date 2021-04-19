@@ -17,7 +17,7 @@ namespace Service.Implementation
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtTokenService;
-        public AccountService( ApplicationContext context)
+        public AccountService(ApplicationContext context)
         {
             _context = context;
         }
@@ -50,9 +50,26 @@ namespace Service.Implementation
             };
         }
 
+        public async Task<ResultLoginDTO> Login_(LoginDTO model)
+        {
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
+            if (!result.Succeeded)
+            {
+                return new ResultLoginDTO
+                {
+                    IsSuccessful = false
+                };
+            }
 
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            await _signInManager.SignInAsync(user, isPersistent: false);
 
+            return new ResultLoginDTO
+            {
+                IsSuccessful = true,
+                Token = _jwtTokenService.CreateToken(user)
+            };
 
-
+        }
     }
 }
