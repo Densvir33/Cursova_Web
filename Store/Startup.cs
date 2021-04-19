@@ -99,7 +99,8 @@ namespace Store
                 endpoints.MapControllers();
             });
 
-            //SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
+            
+            SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
         }
     }
 }
