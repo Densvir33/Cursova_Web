@@ -50,6 +50,5 @@ namespace Store.Controllers
             return Ok(await _productService.AddProduct(hero));
         }
 
-
     }
 }
