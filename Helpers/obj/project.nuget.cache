@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0MKN5+KYoDKGtD7um7Zfp/e2fOGkiVunRwrIny4xjDPm62VllN2Ub3nQ1H6Mageow+HFMcH3PjwOG1KztBSl7A==",
+  "dgSpecHash": "vXxGJ3YSnSiyE7+pHEZ5/fqpY+XmXw3xcy802DyAvg84nOneAPUn62/l7DmSjAoCN+C1/eV24puD+JAXOimy9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj",
+  "projectFilePath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\Helpers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ernendo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\ernendo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

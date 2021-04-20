@@ -6428,11 +6428,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj",
+      "projectUniqueName": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\Helpers.csproj",
       "projectName": "Helpers",
-      "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj",
+      "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\Helpers.csproj",
       "packagesPath": "C:\\Users\\ernendo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Helpers\\obj\\",
+      "outputPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6452,11 +6452,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj"
+            "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Models\\Models.csproj"
             },
-            "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\ernendo\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj"
+            "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Service\\Service.csproj"
             }
           }
         }
