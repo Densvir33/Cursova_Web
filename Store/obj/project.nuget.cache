@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2UROvfXUoV0hfJxoxLOxRyMYioqMHRZPYhhsZjvuCQk1L+sIuVNoUCmJez36HhGkW24Lgf615BfH9JActxbN3Q==",
+  "dgSpecHash": "E8qC8Y/1SR9v8Wt1k6QWKhI/gmKb1+INa0MvcXDQVutEyqWJCdfnXsnGIvZWdhBY5iptpJSJdA00SEhTU3UDQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Store\\Store.csproj",
+  "projectFilePath": "C:\\Users\\Дім\\Desktop\\Нова папка\\Cursova_Web\\Store\\Store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Дім\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Дім\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

@@ -11,35 +11,34 @@ namespace Store.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class DiscountController : ControllerBase
     {
+        private readonly IDiscountService _discountService;
 
-        private readonly IProductService _productService;
-
-        public ProductController(IProductService productService)
+        public DiscountController(IDiscountService discountService)
         {
-            _productService = productService;
+            _discountService = discountService;
         }
 
         [HttpGet("getAll")]
-        public async Task<ResultDTO> GetProducts()
+        public async Task<ResultDTO> GetDiscounts()
         {
             try
             {
-                return await _productService.GetProducts();
+                return await _discountService.GetDiscounts();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ResultDTO> GetProductById([FromRoute]int Id)
+        public async Task<ResultDTO> GetDiscountById([FromRoute] int Id)
         {
             try
             {
-                return await _productService.GetProductById(Id);
+                return await _discountService.GetDiscountById(Id);
             }
             catch (Exception ex)
             {
@@ -48,11 +47,11 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ResultDTO> DeleteProduct(int Id)
+        public async Task<ResultDTO> DeleteDiscount(int Id)
         {
             try
             {
-                return await _productService.DeleteProduct(Id);
+                return await _discountService.DeleteDiscount(Id);
             }
             catch (Exception ex)
             {
@@ -61,11 +60,11 @@ namespace Store.Controllers
         }
 
         [HttpPatch]
-        public async Task<ResultDTO> UpdateProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> UpdateDiscount([FromBody] DiscountDTO Discount)
         {
             try
             {
-                return await _productService.UpdateProduct(Product);
+                return await _discountService.UpdateDiscount(Discount);
             }
             catch (Exception ex)
             {
@@ -74,17 +73,16 @@ namespace Store.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultDTO> AddProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> AddDiscount([FromBody] DiscountDTO Discount)
         {
             try
             {
-                return await _productService.AddProduct(Product);
+                return await _discountService.AddDiscount(Discount);
             }
             catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
-
     }
 }

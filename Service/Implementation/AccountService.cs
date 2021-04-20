@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Service.Implementation
 {
-    class AccountService : IAccountService
+    public class AccountService : IAccountService
     {
 
         private readonly ApplicationContext _context;

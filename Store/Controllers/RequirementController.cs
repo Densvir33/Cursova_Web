@@ -11,35 +11,34 @@ namespace Store.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class RequirementController : ControllerBase
     {
+        private readonly IRequirementService _requirementService;
 
-        private readonly IProductService _productService;
-
-        public ProductController(IProductService productService)
+        public RequirementController(IRequirementService requirementService)
         {
-            _productService = productService;
+            _requirementService = requirementService;
         }
 
         [HttpGet("getAll")]
-        public async Task<ResultDTO> GetProducts()
+        public async Task<ResultDTO> GetRequirements()
         {
             try
             {
-                return await _productService.GetProducts();
+                return await _requirementService.GetRequirements();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ResultDTO> GetProductById([FromRoute]int Id)
+        public async Task<ResultDTO> GetRequirementById([FromRoute] int Id)
         {
             try
             {
-                return await _productService.GetProductById(Id);
+                return await _requirementService.GetRequirementById(Id);
             }
             catch (Exception ex)
             {
@@ -48,11 +47,11 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ResultDTO> DeleteProduct(int Id)
+        public async Task<ResultDTO> DeleteRequirement(int Id)
         {
             try
             {
-                return await _productService.DeleteProduct(Id);
+                return await _requirementService.DeleteRequirement(Id);
             }
             catch (Exception ex)
             {
@@ -61,11 +60,11 @@ namespace Store.Controllers
         }
 
         [HttpPatch]
-        public async Task<ResultDTO> UpdateProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> UpdateRequirement([FromBody] RequirementDTO Requirement)
         {
             try
             {
-                return await _productService.UpdateProduct(Product);
+                return await _requirementService.UpdateRequirement(Requirement);
             }
             catch (Exception ex)
             {
@@ -74,11 +73,11 @@ namespace Store.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultDTO> AddProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> AddRequirement([FromBody] RequirementDTO Requirement)
         {
             try
             {
-                return await _productService.AddProduct(Product);
+                return await _requirementService.AddRequirement(Requirement);
             }
             catch (Exception ex)
             {

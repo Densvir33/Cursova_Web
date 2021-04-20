@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1kK+sSB85tmTvG2BX4EE0rFEc0t08aXpKJaqe5BAlZL3ZVUpIPqDyLpG6KzvOlqtlodOfDja3P+x67lcBnrBzw==",
+  "dgSpecHash": "2PHOA/PR4Zc3YdtAZuIitZPtGKok0kGoZWG1+ZlKBzKAZ9YQHfMiGUCPMbC7k3n/q/ftbEl5M61QRb268sCsUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj",
+  "projectFilePath": "C:\\Users\\Дім\\Desktop\\Нова папка\\Cursova_Web\\Models\\Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Дім\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.14\\microsoft.aspnetcore.cryptography.internal.3.1.14.nupkg.sha512",
     "C:\\Users\\Дім\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.14\\microsoft.aspnetcore.cryptography.keyderivation.3.1.14.nupkg.sha512",

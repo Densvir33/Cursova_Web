@@ -5877,11 +5877,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\Дім\\Desktop\\Нова папка\\Cursova_Web\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\Дім\\Desktop\\Нова папка\\Cursova_Web\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\Дім\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\obj\\",
+      "outputPath": "C:\\Users\\Дім\\Desktop\\Нова папка\\Cursova_Web\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Дім\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -6,40 +6,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace Store.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class CategoryController : ControllerBase
     {
+        private readonly ICategoryService _categoryService;
 
-        private readonly IProductService _productService;
-
-        public ProductController(IProductService productService)
+        public CategoryController(ICategoryService CategoryService)
         {
-            _productService = productService;
+            _categoryService = CategoryService;
         }
 
         [HttpGet("getAll")]
-        public async Task<ResultDTO> GetProducts()
+        public async Task<ResultDTO> GetCategorys()
         {
             try
             {
-                return await _productService.GetProducts();
+                return await _categoryService.GetCategories();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ResultDTO> GetProductById([FromRoute]int Id)
+        public async Task<ResultDTO> GetCategoryById([FromRoute] int Id)
         {
             try
             {
-                return await _productService.GetProductById(Id);
+                return await _categoryService.GetCategoryById(Id);
             }
             catch (Exception ex)
             {
@@ -48,11 +46,11 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ResultDTO> DeleteProduct(int Id)
+        public async Task<ResultDTO> DeleteCategory(int Id)
         {
             try
             {
-                return await _productService.DeleteProduct(Id);
+                return await _categoryService.DeleteCategory(Id);
             }
             catch (Exception ex)
             {
@@ -61,11 +59,11 @@ namespace Store.Controllers
         }
 
         [HttpPatch]
-        public async Task<ResultDTO> UpdateProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> UpdateCategory([FromBody] CategoryDTO Category)
         {
             try
             {
-                return await _productService.UpdateProduct(Product);
+                return await _categoryService.UpdateCategory(Category);
             }
             catch (Exception ex)
             {
@@ -74,17 +72,16 @@ namespace Store.Controllers
         }
 
         [HttpPost]
-        public async Task<ResultDTO> AddProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> AddCategory([FromBody] CategoryDTO Category)
         {
             try
             {
-                return await _productService.AddProduct(Product);
+                return await _categoryService.AddCategory(Category);
             }
             catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
-
     }
 }
