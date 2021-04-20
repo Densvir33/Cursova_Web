@@ -100,7 +100,7 @@ namespace Store
             });
 
             
-            SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
+            //SeederDatabase.SeedData(app.ApplicationServices, env, Configuration);
         }
     }
 }

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj": {}
+    "C:\\Users\\Anton\\Cod\\AngularMagaz\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj": {
+    "C:\\Users\\Anton\\Cod\\AngularMagaz\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Cod\\AngularMagaz\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Дім\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\obj\\",
+        "projectPath": "C:\\Users\\Anton\\Cod\\AngularMagaz\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anton\\Cod\\AngularMagaz\\Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Дім\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -11,10 +11,10 @@ export class ProductService {
 
 constructor(private http: HttpClient) { }
 
- linkString: string = 'https://localhost:44323/api/product'
+ linkString: string = 'https://localhost:44323/product'
 
 getProducts(): Observable<ApiCollectionResponse>{
-  return this.http.get<ApiCollectionResponse>(this.linkString + '/getall');
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/getAll');
 }
 
 deleteProduct(id:number): Observable<ApiResponse>{

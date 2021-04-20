@@ -54,3 +54,17 @@ C:\Users\Дім\Documents\GitHub\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Hel
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Service.dll
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\Anton\Cod\AngularMagaz\Helpers\bin\Debug\netcoreapp3.1\Service.pdb
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.csprojAssemblyReference.cache
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Anton\Cod\AngularMagaz\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb

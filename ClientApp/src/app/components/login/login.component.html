@@ -1,0 +1,11 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<div class='login'>
+  <h2>Login</h2>
+  <input name='email' placeholder='E-Mail Address' type='text' [(ngModel)]="user.email">
+  <input id='pw' name='password' placeholder='Password' type='password' [(ngModel)]="user.password">
+
+  <input class='animated' type='submit' value='Login' (click)="onSubmit()">
+
+  <a class='forgot' [routerLink]="['/account/register']">Have no account?</a>
+</div>

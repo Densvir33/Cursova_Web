@@ -11,7 +11,7 @@ export class AccountService {
 
 constructor(private http: HttpClient) { }
 
-linkString: string = 'https://localhost:44323/api/account'
+linkString: string = 'https://localhost:44323/account'
 
 login(user:LoginDTO) {
   return this.http.post<ApiLoginResponse>(this.linkString + '/login', user)       

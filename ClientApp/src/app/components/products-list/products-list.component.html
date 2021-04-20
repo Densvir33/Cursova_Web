@@ -1,0 +1,30 @@
+
+<div class="container">
+  <!-- <button type="button" class="btn btn-dark m-3">Add new category</button> -->
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col">DEL</th>
+      <th scope="col">Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of products; index as i" style="cursor: pointer;">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>      
+        {{ item.name }}
+      </td>
+      <td>
+        <button type="button" class="btn btn-dark">Delete</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-dark" >Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
