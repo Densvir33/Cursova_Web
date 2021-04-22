@@ -85,6 +85,18 @@ namespace Store.Controllers
                 return new ResultDTO { };
             }
         }
+        [HttpGet]
+        public async Task<ResultDTO> Pagination(int page, int count)
+        {
+            try
+            {
+                return await _productService.Pagination( page,count);
+            }
+            catch (Exception ex)
+            {
+                return new ResultDTO { };
+            }
+        }
 
     }
 }

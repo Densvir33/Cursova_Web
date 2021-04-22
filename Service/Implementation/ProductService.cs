@@ -108,5 +108,37 @@ namespace Service.Implementation
 
             return result;
         }
+
+        
+        public async Task<ResultDTO> Pagination(int page = 1, int count = 10)
+        {
+            try
+            {
+                //int pageSize = 3;
+                List<ProductDTO> cusvm = _context.Products.Include(x => x.Category)
+                    .Skip((page - 1) * count)
+                    .Take(count).ToList()
+                    .Select(c => new ProductDTO
+                    {
+                        Id = c.Id,
+                        Name = c.Name,
+                        Price = c.Price,
+                        Property = c.Property,
+                        Mass = c.Mass,
+                        Category = c.Category.Name,
+                    }).ToList();
+
+                return new CollectionResultDTO<ProductDTO> { };
+            }
+            catch (Exception ex)
+            {
+                return new ResultDTO
+                {
+                    IsSuccessful = false,
+                    Message = ex.Message
+                };
+            }
+        }
+
     }
 }

@@ -14,5 +14,6 @@ namespace Service.Interface
         Task<CollectionResultDTO<ProductDTO>> AddProduct(ProductDTO product);
         Task<CollectionResultDTO<ProductDTO>> UpdateProduct(ProductDTO updateProduct);
         Task<CollectionResultDTO<ProductDTO>> DeleteProduct(int id);
+        Task<ResultDTO> Pagination(int page,int count);
     }
 }
