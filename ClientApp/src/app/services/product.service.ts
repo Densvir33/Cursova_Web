@@ -11,7 +11,7 @@ export class ProductService {
 
 constructor(private http: HttpClient) { }
 
- linkString: string = 'https://localhost:44323/product'
+ linkString: string = 'https://localhost:44323/api/product'
 
 getProducts(): Observable<ApiCollectionResponse>{
   return this.http.get<ApiCollectionResponse>(this.linkString + '/getAll');

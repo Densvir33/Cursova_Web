@@ -1,13 +1,35 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
-<div class='login'>
-  <h2>Register</h2>
-  <input name='username' placeholder='Username' type='text' [(ngModel)]="newUser.fullname" >
-  <input id='pw' name='password' placeholder='Password' type='password' [(ngModel)]="newUser.password" >
-  <input name='email' placeholder='E-Mail Address' type='text' [(ngModel)]="newUser.email" />
-  <input name='number' placeholder='Phone number' type='text' [(ngModel)]="newUser.phonenumber">
-  
-  <input class='animated' type='submit' value='Register' (click)="onSubmit()">
+<!-- Start Register Area -->
+<section class="register-area ptb-100">
+  <div class="container">
+      <div class="register-form">
+          <h2>Register</h2>
 
-  <a class='forgot' [routerLink]="['/account/login']">Already have an account?</a>
-</div>
+          <form>
+              <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" class="form-control" placeholder="Username">
+              </div>
+
+              <div class="form-group">
+                <label>Phone number</label>
+                <input type="text" class="form-control" placeholder="Phone number">
+              </div>
+
+              <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="Email">
+              </div>
+
+              <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" placeholder="Password">
+              </div>
+
+              <p class="description">The password should be at least eight characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ & )</p>
+
+              <button type="submit" class="default-btn">Register</button>
+          </form>
+      </div>
+  </div>
+</section>
+<!-- End Register Area -->
