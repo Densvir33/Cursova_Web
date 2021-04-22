@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Models.DTO;
 using Models.DTO.ResultDTO;
 using Service.Interface;
@@ -21,6 +22,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("getAll")]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> GetOrders()
         {
             try
@@ -34,6 +36,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin , User")]
         public async Task<ResultDTO> GetOrderById([FromRoute] int Id)
         {
             try
@@ -47,6 +50,7 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> DeleteOrder(int Id)
         {
             try

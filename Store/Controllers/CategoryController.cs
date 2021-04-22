@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Models.DTO;
 using Models.DTO.ResultDTO;
 using Service.Interface;
@@ -33,6 +34,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> GetCategoryById([FromRoute] int Id)
         {
             try
@@ -46,6 +48,7 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> DeleteCategory(int Id)
         {
             try
@@ -59,6 +62,7 @@ namespace Store.Controllers
         }
 
         [HttpPatch]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> UpdateCategory([FromBody] CategoryDTO Category)
         {
             try
@@ -72,6 +76,7 @@ namespace Store.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> AddCategory([FromBody] CategoryDTO Category)
         {
             try

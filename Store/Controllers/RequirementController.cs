@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Models.DTO;
 using Models.DTO.ResultDTO;
 using Service.Interface;
@@ -47,6 +48,7 @@ namespace Store.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> DeleteRequirement(int Id)
         {
             try
@@ -60,6 +62,7 @@ namespace Store.Controllers
         }
 
         [HttpPatch]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> UpdateRequirement([FromBody] RequirementDTO Requirement)
         {
             try
@@ -73,6 +76,7 @@ namespace Store.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> AddRequirement([FromBody] RequirementDTO Requirement)
         {
             try
