@@ -7,7 +7,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -2124,7 +2124,7 @@ Main Banner Area CSS
 }
 
 .main-banner-item {
-  /* background-image: url(../../assets/img/main-banner-bg-1.jpg); */
+  background-image: url("https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2163,13 +2163,14 @@ Main Banner Area CSS
 
 .main-banner-content h1 {
   font-size: 70px;
-  color: #ffffff;
+  color: #111;
   margin-top: 15px;
   margin-bottom: 20px;
+  line-height: initial;
 }
 
 .main-banner-content p {
-  color: #ffffff;
+  color: #111;
   margin-bottom: 0;
 }
 
@@ -4693,8 +4694,8 @@ Page Banner CSS
 .page-banner-content ul li::before {
   content: "";
   position: absolute;
-  left: -10px;
-  top: 8px;
+  left: -8px;
+  top: 5px;
   height: 12px;
   width: 1px;
   background: #f35320;

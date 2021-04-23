@@ -1,3 +1,7 @@
 img {
   height: 250px;
 }
+
+.optional-btn {
+  margin-left: 0;
+}
