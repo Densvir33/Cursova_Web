@@ -9,6 +9,8 @@ namespace Models.DTO
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsExecuted { get; set; }
+        public List<ProductInCartDTO> Quantitys { get; set; }
+
 
     }
 }

@@ -23,7 +23,7 @@ namespace Store.Controllers
 
         [HttpGet("getAll")]
         [Authorize(Roles = "Admin , User")]
-        public async Task<ResultDTO> GetDiscounts()
+        public async Task<CollectionResultDTO<List<DiscountDTO>>> GetDiscounts()
         {
             try
             {
@@ -31,13 +31,13 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<List<DiscountDTO>> { };
             }
         }
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin , User")]
-        public async Task<ResultDTO> GetDiscountById([FromRoute] int Id)
+        public async Task<CollectionResultDTO<DiscountDTO>> GetDiscountById([FromRoute] int Id)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<DiscountDTO> { };
             }
         }
 

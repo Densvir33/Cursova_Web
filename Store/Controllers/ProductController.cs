@@ -23,7 +23,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("getAll")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ResultDTO> GetProducts()
         {
             try

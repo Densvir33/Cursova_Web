@@ -22,7 +22,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("getAll")]
-        public async Task<ResultDTO> GetRequirements()
+        public async Task<CollectionResultDTO<List<RequirementDTO>>> GetRequirements()
         {
             try
             {
@@ -30,12 +30,12 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<List<RequirementDTO>> { };
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ResultDTO> GetRequirementById([FromRoute] int Id)
+        public async Task<CollectionResultDTO<RequirementDTO>> GetRequirementById([FromRoute] int Id)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<RequirementDTO> { };
             }
         }
 

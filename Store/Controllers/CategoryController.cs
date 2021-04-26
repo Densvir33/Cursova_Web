@@ -21,7 +21,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("getAll")]
-        public async Task<ResultDTO> GetCategorys()
+        public async Task<CollectionResultDTO<List<CategoryDTO>>> GetCategorys()
         {
             try
             {
@@ -29,13 +29,13 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<List<CategoryDTO>> { };
             }
         }
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<ResultDTO> GetCategoryById([FromRoute] int Id)
+        public async Task<CollectionResultDTO<CategoryDTO>> GetOrderById([FromRoute] int Id)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<CategoryDTO> { };
             }
         }
 

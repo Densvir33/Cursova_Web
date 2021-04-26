@@ -22,8 +22,8 @@ namespace Store.Controllers
         }
 
         [HttpGet("getAll")]
-        [Authorize(Roles = "Admin")]
-        public async Task<ResultDTO> GetOrders()
+       // [Authorize(Roles = "Admin")]
+        public async Task<CollectionResultDTO<List<OrderDTO>>> GetOrders()
         {
             try
             {
@@ -31,13 +31,13 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<List<OrderDTO>> { };
             }
         }
 
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin , User")]
-        public async Task<ResultDTO> GetOrderById([FromRoute] int Id)
+        public async Task<CollectionResultDTO<OrderDTO>> GetOrderById([FromRoute] int Id)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace Store.Controllers
             }
             catch (Exception ex)
             {
-                return new ResultDTO { };
+                return new CollectionResultDTO<OrderDTO> { };
             }
         }
 

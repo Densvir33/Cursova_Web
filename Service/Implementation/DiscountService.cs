@@ -23,22 +23,19 @@ namespace Service.Implementation
             _mapper = mapper;
         }
 
-        public Task<CollectionResultDTO<DiscountDTO>> AddDiscount(DiscountDTO discount)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public async Task<CollectionResultDTO<DiscountDTO>> AddProduct(DiscountDTO product)
+        public async Task<CollectionResultDTO<DiscountDTO>> AddDiscount(DiscountDTO Discount)
         {
             CollectionResultDTO<DiscountDTO> result = new CollectionResultDTO<DiscountDTO>();
-            //Product _newProduct = _mapper.Map<Product>(product);
+            //Discount _newDiscount = _mapper.Map<Discount>(Discount);
 
-            Product _newProduct = new Product()
+            Discount _newDiscount = new Discount()
             {
-                Name = product.Name
+                Name = Discount.Name
             };
 
-            await _context.Products.AddAsync(_newProduct);
+            await _context.Discounts.AddAsync(_newDiscount);
             await _context.SaveChangesAsync();
 
             result.IsSuccessful = true;
@@ -47,19 +44,16 @@ namespace Service.Implementation
 
         }
 
-        public Task<CollectionResultDTO<DiscountDTO>> DeleteDiscount(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public async Task<CollectionResultDTO<DiscountDTO>> DeleteProduct(int id)
+        public async Task<CollectionResultDTO<DiscountDTO>> DeleteDiscount(int id)
         {
             CollectionResultDTO<DiscountDTO> result = new CollectionResultDTO<DiscountDTO>();
 
             try
             {
-                Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
-                _context.Products.Remove(_product);
+                Discount _Discount = await _context.Discounts.FirstOrDefaultAsync(x => x.Id == id);
+                _context.Discounts.Remove(_Discount);
                 await _context.SaveChangesAsync();
                 result.IsSuccessful = true;
 
@@ -73,59 +67,48 @@ namespace Service.Implementation
             return result;
         }
 
-        public Task<CollectionResultDTO<DiscountDTO>> GetDiscountById(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public Task<CollectionResultDTO<List<DiscountDTO>>> GetDiscounts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<CollectionResultDTO<DiscountDTO>> GetProductById(int id)
+        public async Task<CollectionResultDTO<DiscountDTO>> GetDiscountById(int id)
         {
             CollectionResultDTO<DiscountDTO> result = new CollectionResultDTO<DiscountDTO>();
 
-            Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            Discount _Discount = await _context.Discounts.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new DiscountDTO() { Name = _product.Name, Id = _product.Id };
+            result.Data = new DiscountDTO() { Name = _Discount.Name, Id = _Discount.Id };
 
             return result;
         }
 
-        public async Task<CollectionResultDTO<List<DiscountDTO>>> GetProducts()
+        public async Task<CollectionResultDTO<List<DiscountDTO>>> GetDiscounts()
         {
             CollectionResultDTO<List<DiscountDTO>> result = new CollectionResultDTO<List<DiscountDTO>>();
 
-            List<Product> products = await _context.Products.ToListAsync();
+            List<Discount> Discounts = await _context.Discounts.ToListAsync();
 
-            //result.Data = (products.Select(x => _mapper.Map<DiscountDTO>(x))).ToList();
+            //result.Data = (Discounts.Select(x => _mapper.Map<DiscountDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = products.Select(x => new DiscountDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = Discounts.Select(x => new DiscountDTO() { Name = x.Name, Id = x.Id }).ToList();
 
             return result;
         }
 
-        public Task<CollectionResultDTO<DiscountDTO>> UpdateDiscount(DiscountDTO updateDiscount)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public async Task<CollectionResultDTO<DiscountDTO>> UpdateProduct(DiscountDTO updateProduct)
+        public async Task<CollectionResultDTO<DiscountDTO>> UpdateDiscount(DiscountDTO updateDiscount)
         {
             CollectionResultDTO<DiscountDTO> result = new CollectionResultDTO<DiscountDTO>();
 
             try
             {
-                Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == updateProduct.Id);
-                _product.Name = updateProduct.Name;
+                Discount _Discount = await _context.Discounts.FirstOrDefaultAsync(x => x.Id == updateDiscount.Id);
+                _Discount.Name = updateDiscount.Name;
 
-                _context.Products.Update(_product);
+                _context.Discounts.Update(_Discount);
                 await _context.SaveChangesAsync();
 
-                result.Data = new DiscountDTO() { Name = _product.Name };
+                result.Data = new DiscountDTO() { Name = _Discount.Name };
             }
             catch (Exception ex)
             {

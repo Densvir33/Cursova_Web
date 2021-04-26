@@ -6,6 +6,6 @@ namespace Models.DTO
 {
     public class ProductInCartDTO : ProductDTO
     {
-        public int quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }

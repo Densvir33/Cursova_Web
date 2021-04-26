@@ -21,17 +21,17 @@ namespace Service.Implementation
             _context = context;
             _mapper = mapper;
         }
-        public async Task<CollectionResultDTO< RequirementDTO>> AddProduct( RequirementDTO product)
+        public async Task<CollectionResultDTO< RequirementDTO>> AddRequirement( RequirementDTO Requirement)
         {
             CollectionResultDTO< RequirementDTO> result = new CollectionResultDTO< RequirementDTO>();
-            //Product _newProduct = _mapper.Map<Product>(product);
+            //Requirement _newRequirement = _mapper.Map<Requirement>(Requirement);
 
-            Product _newProduct = new Product()
+            Requirement _newRequirement = new Requirement()
             {
-                Name = product.Name
+                Name = Requirement.Name
             };
 
-            await _context.Products.AddAsync(_newProduct);
+            await _context.Requirements.AddAsync(_newRequirement);
             await _context.SaveChangesAsync();
 
             result.IsSuccessful = true;
@@ -40,19 +40,16 @@ namespace Service.Implementation
 
         }
 
-        public Task<CollectionResultDTO<RequirementDTO>> AddRequirement(RequirementDTO requirement)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public async Task<CollectionResultDTO< RequirementDTO>> DeleteProduct(int id)
+        public async Task<CollectionResultDTO< RequirementDTO>> DeleteRequirement(int id)
         {
             CollectionResultDTO< RequirementDTO> result = new CollectionResultDTO< RequirementDTO>();
 
             try
             {
-                Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
-                _context.Products.Remove(_product);
+                Requirement _Requirement = await _context.Requirements.FirstOrDefaultAsync(x => x.Id == id);
+                _context.Requirements.Remove(_Requirement);
                 await _context.SaveChangesAsync();
                 result.IsSuccessful = true;
 
@@ -66,59 +63,48 @@ namespace Service.Implementation
             return result;
         }
 
-        public Task<CollectionResultDTO<RequirementDTO>> DeleteRequirement(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public async Task<CollectionResultDTO< RequirementDTO>> GetProductById(int id)
+        public async Task<CollectionResultDTO< RequirementDTO>> GetRequirementById(int id)
         {
             CollectionResultDTO< RequirementDTO> result = new CollectionResultDTO< RequirementDTO>();
 
-            Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            Requirement _Requirement = await _context.Requirements.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new  RequirementDTO() { Name = _product.Name, Id = _product.Id };
+            result.Data = new  RequirementDTO() { Name = _Requirement.Name, Id = _Requirement.Id };
 
             return result;
         }
 
-        public async Task<CollectionResultDTO<List< RequirementDTO>>> GetProducts()
+        public async Task<CollectionResultDTO<List< RequirementDTO>>> GetRequirements()
         {
             CollectionResultDTO<List< RequirementDTO>> result = new CollectionResultDTO<List< RequirementDTO>>();
 
-            List<Product> products = await _context.Products.ToListAsync();
+            List<Requirement> Requirements = await _context.Requirements.ToListAsync();
 
-            //result.Data = (products.Select(x => _mapper.Map< RequirementDTO>(x))).ToList();
+            //result.Data = (Requirements.Select(x => _mapper.Map< RequirementDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = products.Select(x => new  RequirementDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = Requirements.Select(x => new  RequirementDTO() { Name = x.Name, Id = x.Id }).ToList();
 
             return result;
         }
 
-        public Task<CollectionResultDTO<RequirementDTO>> GetRequirementById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        public Task<CollectionResultDTO<List<RequirementDTO>>> GetRequirements()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<CollectionResultDTO< RequirementDTO>> UpdateProduct( RequirementDTO updateProduct)
+        public async Task<CollectionResultDTO< RequirementDTO>> UpdateRequirement( RequirementDTO updateRequirement)
         {
             CollectionResultDTO< RequirementDTO> result = new CollectionResultDTO< RequirementDTO>();
 
             try
             {
-                Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == updateProduct.Id);
-                _product.Name = updateProduct.Name;
+                Requirement _Requirement = await _context.Requirements.FirstOrDefaultAsync(x => x.Id == updateRequirement.Id);
+                _Requirement.Name = updateRequirement.Name;
 
-                _context.Products.Update(_product);
+                _context.Requirements.Update(_Requirement);
                 await _context.SaveChangesAsync();
 
-                result.Data = new  RequirementDTO() { Name = _product.Name };
+                result.Data = new  RequirementDTO() { Name = _Requirement.Name };
             }
             catch (Exception ex)
             {
@@ -129,9 +115,6 @@ namespace Service.Implementation
             return result;
         }
 
-        public Task<CollectionResultDTO<RequirementDTO>> UpdateRequirement(RequirementDTO updateRequirement)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
