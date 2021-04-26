@@ -83,18 +83,15 @@ namespace Store
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
-                facebookOptions.AppId = Configuration["Authentication:Facebook:458315858792143"];
-                facebookOptions.AppSecret = Configuration["Authentication:Facebook:6b1cc665d2bb99ca201df771f4b5d404"];
+                facebookOptions.AppId = "458315858792143";
+                facebookOptions.AppSecret = "6b1cc665d2bb99ca201df771f4b5d404";
             });
 
             services.AddAuthentication()
         .AddGoogle(options =>
         {
-            IConfigurationSection googleAuthNSection =
-                Configuration.GetSection("Authentication:Google");
-
-            options.ClientId = googleAuthNSection["128238207985-kc7untqduf5cbqad0a7ra9q05j84hr94.apps.googleusercontent.com"];
-            options.ClientSecret = googleAuthNSection["bdlE13bsD1aW2vLgLBH2uvLi"];
+            options.ClientId = "128238207985-kc7untqduf5cbqad0a7ra9q05j84hr94.apps.googleusercontent.com";
+            options.ClientSecret = "bdlE13bsD1aW2vLgLBH2uvLi";
         });
         }
 
@@ -109,9 +106,9 @@ namespace Store
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseRouting();
 
-            app.UseAuthentication();
 
             app.UseAuthorization();
 

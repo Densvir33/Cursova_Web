@@ -8,14 +8,7 @@
       "TRACE",
       "DEBUG",
       "NETCOREAPP",
-      "NETCOREAPP3_1",
-      "NETCOREAPP1_0_OR_GREATER",
-      "NETCOREAPP1_1_OR_GREATER",
-      "NETCOREAPP2_0_OR_GREATER",
-      "NETCOREAPP2_1_OR_GREATER",
-      "NETCOREAPP2_2_OR_GREATER",
-      "NETCOREAPP3_0_OR_GREATER",
-      "NETCOREAPP3_1_OR_GREATER"
+      "NETCOREAPP3_1"
     ],
     "languageVersion": "8.0",
     "platform": "",
@@ -32,7 +25,10 @@
       "Store/1.0.0": {
         "dependencies": {
           "Helpers": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.14",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.14",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.14",
+          "Microsoft.AspNetCore.Authentication.Twitter": "3.1.14",
           "Microsoft.EntityFrameworkCore": "3.1.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.14",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.14",
@@ -373,6 +369,28 @@
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
         }
       },
+      "Microsoft.AspNetCore.Authentication.Facebook/3.1.14": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "3.1.14.0",
+            "fileVersion": "3.100.1421.16608"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.14": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.14.0",
+            "fileVersion": "3.100.1421.16608"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.14": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
@@ -385,6 +403,17 @@
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Twitter/3.1.14": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {
+            "assemblyVersion": "3.1.14.0",
+            "fileVersion": "3.100.1421.16608"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Twitter.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.14": {
@@ -3372,12 +3401,33 @@
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Authentication.Facebook/3.1.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IgLFCO7FWLwxgt2z/rE/EGlES3085N1ixRRhcHuKtJPMXR8qSbCuMEB5Ec+hqc5upGbOviVestkGA7SdWH0R0A==",
+      "path": "microsoft.aspnetcore.authentication.facebook/3.1.14",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.3.1.14.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4p52XjB6VpTsC7+gWCyeuwPGKtdrWn6pdYdtJ/45yKEg8xB3uo0aDxPYcKKvFs+UFOuwyztbhS+T69VC0Xn7oA==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.14",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.14.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.14": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-/HlfEeETtagEM+HuLr7VzXAd6MkxLVUbXRWDEvzMPe3cNXl8ZbuPv8oaiAd99sBhXlOKemeQVZooi8nOeekuFA==",
       "path": "microsoft.aspnetcore.authentication.jwtbearer/3.1.14",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.3.1.14.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Twitter/3.1.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DavXD9c2byi54DcRzp/F56tT8BWTXRrBHYX8XjG0RUA2xLPyAuZSlrmwgbf+KfAiotQ5S6DIqXdxmk/FDsP6Sw==",
+      "path": "microsoft.aspnetcore.authentication.twitter/3.1.14",
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.3.1.14.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.14": {
       "type": "package",
