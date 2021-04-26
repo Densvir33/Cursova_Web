@@ -1,3 +1,33 @@
-<p>
-  add-product works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="form-group col-6">
+      <label for="exampleInputEmail1">Product name</label>
+      <input [(ngModel)]="newProduct.name" type="text" class="form-control" placeholder="Enter name">
+
+      <label for="exampleInputEmail1">Product price</label>
+      <input [(ngModel)]="newProduct.price" type="number" class="form-control" placeholder="Enter price">
+
+      <label for="exampleInputEmail1">Product mass</label>
+      <input [(ngModel)]="newProduct.mass" type="number" class="form-control"  placeholder="Enter mass">
+
+      <label for="exampleInputEmail1">Product propp</label>
+      <input [(ngModel)]="newProduct.property" type="text" class="form-control" placeholder="Enter prop">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Select category</label>
+      <div >
+        <select class="form-select" style="height: 37px; width: 200px;"
+        [(ngModel)]="selectedCategory" >
+          <option *ngFor="let item of catagories" value="{{item.name}}">
+            {{item.name}}</option>          
+        </select>        
+      </div>
+      
+
+    </div>
+  </div>
+  
+  <button (click)="onAdd()" type="submit" class="btn btn-dark">Add product</button>
+</div>
+

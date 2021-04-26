@@ -21,6 +21,8 @@ import { ProductViewComponent } from './components/product-view/product-view.com
 import { UserViewComponent } from './components/user/user-view/user-view.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
+import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     ContactComponent,
     UserViewComponent,
     ErrorPageComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AddProductComponent,
+    AddCategoryComponent
 
   ],
   imports: [

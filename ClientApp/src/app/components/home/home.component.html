@@ -83,8 +83,9 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua quis ipsum suspendisse</p>
         </div>
 
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
+        <div class="row" >
+
+            <div class="col-lg-3 col-md-6" *ngFor="let item of products; index as i">
                 <div class="top-products-item">
                     <div class="products-image">
                         <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
@@ -102,11 +103,11 @@
 
                     <div class="products-content">
                         <h3>
-                            <a href="shop-details.html">Darling Oranges</a>
+                            <a href="shop-details.html">{{item.name}}</a>
                         </h3>
                         <div class="price">
-                            <span class="new-price">$38.00</span>
-                            <span class="old-price">$125.00</span>
+                            <span class="new-price">${{item.price}}</span>
+                            <!-- <span class="old-price">$125.00</span> -->
                         </div>
                         <ul class="rating">
                             <li>
@@ -121,264 +122,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Strawberry</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$30.00</span>
-                            <span class="old-price">$116.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Cabbage</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$40.00</span>
-                            <span class="old-price">$179.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Nectarine</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$45.00</span>
-                            <span class="old-price">$135.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Seasoned Tomatoes</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$68.00</span>
-                            <span class="old-price">$168.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Seasoned Carrot</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$30.00</span>
-                            <span class="old-price">$130.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Pineapple</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$39.00</span>
-                            <span class="old-price">$139.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="top-products-item">
-                    <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
-
-                        <ul class="products-action">
-                            <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                            </li>
-                        </ul>
-
-                        <div class="sale">
-                            <span>Sale</span>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>
-                            <a href="shop-details.html">Fresh Banana</a>
-                        </h3>
-                        <div class="price">
-                            <span class="new-price">$17.00</span>
-                            <span class="old-price">$115.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
+            
         </div>
     </div>
 </section>
