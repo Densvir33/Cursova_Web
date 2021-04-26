@@ -80,6 +80,8 @@ namespace Store
             services.AddScoped<IDiscountService, DiscountService>();
             services.AddScoped<IRequirementService, RequirementService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IHistoryOrdersService, HistoryOrdersService>();
+
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {

@@ -18,6 +18,7 @@ namespace Models.Entities
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Requirement> Requirements { get; set; }
+        public virtual DbSet<HistoryOrders> HistoryOrderss { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

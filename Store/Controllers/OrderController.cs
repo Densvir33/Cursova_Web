@@ -49,6 +49,8 @@ namespace Store.Controllers
             }
         }
 
+        
+
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<ResultDTO> DeleteOrder(int Id)

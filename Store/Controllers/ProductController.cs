@@ -12,7 +12,7 @@ namespace Store.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : Controller
+    public class ProductController : ControllerBase
     {
 
         private readonly IProductService _productService;
