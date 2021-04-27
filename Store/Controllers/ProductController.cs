@@ -90,6 +90,21 @@ namespace Store.Controllers
                 return new ResultDTO { };
             }
         }
+
+        [HttpGet("getAll")]
+        //[Authorize(Roles = "Admin")]
+        public async Task<ResultDTO> GetProductsByCategory(string name)
+        {
+            try
+            {
+                return await _productService.GetProductsByCategory(name);
+            }
+            catch (Exception ex)
+            {
+                return new ResultDTO { };
+            }
+        }
+
         [HttpGet]
         public async Task<ResultDTO> Pagination(int page, int count)
         {
@@ -102,6 +117,8 @@ namespace Store.Controllers
                 return new ResultDTO { };
             }
         }
+
+
 
     }
 }

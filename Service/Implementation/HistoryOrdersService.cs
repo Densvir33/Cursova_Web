@@ -96,6 +96,8 @@ namespace Service.Implementation
                 Total = x.Total,
                 IsDone = x.IsDone
             }).ToList();
+            List<HistoryOrdersDTO>newArray = result.Data.Where((e, i) => i < 6).ToList();
+
             return result;
         }
     }

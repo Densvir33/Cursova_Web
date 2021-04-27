@@ -139,6 +139,20 @@ namespace Service.Implementation
                 };
             }
         }
+        public async Task<CollectionResultDTO<List<ProductDTO>>> GetProductsByCategory(string name)
+        {
+            CollectionResultDTO<List<ProductDTO>> result = new CollectionResultDTO<List<ProductDTO>>();
+
+            List<Product> products = await _context.Products.Include(x=>x.Category).Where(x=>x.Category.Name==name).ToListAsync();
+
+            //result.Data = (products.Select(x => _mapper.Map<ProductDTO>(x))).ToList();
+            //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
+
+            result.Data = products.Select(x => new ProductDTO() { Name = x.Name, Id = x.Id }).ToList();
+
+            return result;
+        }
+
 
     }
 }
