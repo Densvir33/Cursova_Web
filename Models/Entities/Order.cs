@@ -12,7 +12,7 @@ namespace Models.Entities
         [Required]
         public string Name { get; set; }
         public bool IsExecuted { get; set; }
-
+        public DateTime Date { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<Discount> Discounts { get; set; }

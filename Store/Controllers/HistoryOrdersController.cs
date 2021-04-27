@@ -23,11 +23,11 @@ namespace Store.Controllers
 
         [HttpGet("getAll")]
         [Authorize(Roles = "Admin , User")]
-        public async Task<CollectionResultDTO<List<HistoryOrdersDTO>>> GetHistoryOrderss()
+        public async Task<CollectionResultDTO<List<HistoryOrdersDTO>>> GetHistoryOrderss(string id)
         {
             try
             {
-                return await _historyOrdersService.GetHistoryOrderss();
+                return await _historyOrdersService.GetHistoryOrderss(id);
             }
             catch (Exception ex)
             {

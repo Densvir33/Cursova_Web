@@ -72,7 +72,8 @@ namespace Service.Implementation
 
             HistoryOrders _HistoryOrders = await _context.HistoryOrderss.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new HistoryOrdersDTO() { 
+            result.Data = new HistoryOrdersDTO()
+            {
                 Discount = _HistoryOrders.Discount,
                 Price = _HistoryOrders.Price,
                 Date = _HistoryOrders.Date,
@@ -83,23 +84,18 @@ namespace Service.Implementation
             return result;
         }
 
-        public async Task<CollectionResultDTO<List<HistoryOrdersDTO>>> GetHistoryOrderss()
+        public async Task<CollectionResultDTO<List<HistoryOrdersDTO>>> GetHistoryOrderss(string id)
         {
             CollectionResultDTO<List<HistoryOrdersDTO>> result = new CollectionResultDTO<List<HistoryOrdersDTO>>();
-
-            List<HistoryOrders> HistoryOrderss = await _context.HistoryOrderss.ToListAsync();
-
-            //result.Data = (HistoryOrderss.Select(x => _mapper.Map<HistoryOrdersDTO>(x))).ToList();
-            //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
-
-            result.Data = HistoryOrderss.Select(x => new HistoryOrdersDTO() { 
+            List<HistoryOrders> HistoryOrderss = await _context.HistoryOrderss.Where(x => x.User.Id == id).ToListAsync();
+            result.Data = HistoryOrderss.Select(x => new HistoryOrdersDTO()
+            {
                 Date = x.Date,
-                Discount = x.Discount,
                 Price = x.Price,
+                Discount = x.Discount,
                 Total = x.Total,
-                IsDone = x.IsDone,
+                IsDone = x.IsDone
             }).ToList();
-
             return result;
         }
     }

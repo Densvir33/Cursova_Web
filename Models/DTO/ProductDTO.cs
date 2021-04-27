@@ -14,5 +14,6 @@ namespace Models.DTO
         public float Mass { get; set; }
         public string Category { get; set; }
 
+
     }
 }
