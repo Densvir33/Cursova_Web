@@ -110,7 +110,7 @@ namespace Service.Implementation
         }
 
         
-        public async Task<ResultDTO> Pagination(int page = 1, int count = 10)
+        public async Task<ResultDTO> Pagination(int page = 1, int count = 6) //Передається з фронтенда !!!!
         {
             try
             {

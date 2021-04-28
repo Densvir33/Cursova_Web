@@ -14,5 +14,7 @@ namespace Service.Interface
         Task<CollectionResultDTO<CategoryDTO>> AddCategory(CategoryDTO category);
         Task<CollectionResultDTO<CategoryDTO>> UpdateCategory(CategoryDTO updateCategory);
         Task<CollectionResultDTO<CategoryDTO>> DeleteCategory(int id);
+        Task<ResultDTO> Pagination(int page, int count);
+
     }
 }
