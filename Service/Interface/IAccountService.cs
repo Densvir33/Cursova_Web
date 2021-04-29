@@ -10,7 +10,7 @@ namespace Service.Interface
 {
     public interface IAccountService
     {
-        Task<CollectionResultDTO<LoginDTO>> Login(LoginDTO user);
+        Task<ResultLoginDTO> Login(LoginDTO user);
         Task<CollectionResultDTO<RegisterDTO>> Register(RegisterDTO newUser);
 
     }

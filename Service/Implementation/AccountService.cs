@@ -22,10 +22,7 @@ namespace Service.Implementation
             _context = context;
         }
 
-        public Task<CollectionResultDTO<LoginDTO>> Login(LoginDTO user)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public async Task<CollectionResultDTO<RegisterDTO>> Register(RegisterDTO newUser)
         {
@@ -50,7 +47,7 @@ namespace Service.Implementation
             };
         }
 
-        public async Task<ResultLoginDTO> Login_(LoginDTO model)
+        public async Task<ResultLoginDTO> Login(LoginDTO model)
         {
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
             if (!result.Succeeded)
