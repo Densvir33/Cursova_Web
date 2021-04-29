@@ -17,9 +17,12 @@ namespace Service.Implementation
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtTokenService;
-        public AccountService(ApplicationContext context)
+        public AccountService(ApplicationContext context, UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtTokenService )
         {
             _context = context;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _jwtTokenService = jwtTokenService;
         }
 
         
