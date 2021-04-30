@@ -1,7 +1,13 @@
+import { getLocaleTimeFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MaxLengthValidator } from '@angular/forms';
+
+import { ApiCollectionResponse, ApiSingleResponse } from 'src/app/models/apiResponse';
 import { ProductDTO } from 'src/app/models/productDTO';
 import { ProductInCart } from 'src/app/models/productInCart';
+import { AccountService } from 'src/app/services/account.service';
 import { OrderService } from 'src/app/services/order.service';
+import { ProductService } from 'src/app/services/product.service';
 import { ProductViewComponent } from '../product-view/product-view.component';
 
 @Component({
@@ -10,7 +16,7 @@ import { ProductViewComponent } from '../product-view/product-view.component';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent implements OnInit {
-
+  productsInCart:Array<number> =[]
   products: Array<ProductInCart> =[
     {id: 1,
     name: 'Darling Oranges',
@@ -20,32 +26,14 @@ export class BasketComponent implements OnInit {
     mass:153,
     category: 'ss',
     quantity:1},
-  
-    {id: 2,
-      name: 'Darling Oranges',
-      price: 455.00,
-      image: 'sqqq',
-      property: 'string',
-      mass:153,
-      category: 'ss',
-      quantity:2},
-    {id: 3,
-        name: 'Darling Oranges',
-        price: 455.00,
-        image: 'sqqq',
-        property: 'string',
-        mass:153,
-        category: 'ss',
-        quantity:3}
-  
-  ]
+  ]  
 
-  
-  
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService,
+    private productService:ProductService,
+    private accountService:AccountService) { }
 
   ngOnInit() {
-
+    this.IsLogin()
   }
 
   onDelete(id:number){   
@@ -62,5 +50,29 @@ export class BasketComponent implements OnInit {
     this.products[id-1].quantity--;
   }
 
+  IsLogin(){
+    if(localStorage.getItem('id_token')){
+      let token = localStorage.getItem('id_token')
+      this.accountService.getUserID()
+
+      
+    }
+    else{
+
+      let tmp = localStorage.getItem('currentCart')
+      this.productsInCart = JSON.parse(tmp!)
+      console.log(this.productsInCart)
+        
+      this.productService.getProductToCart(this.productsInCart).subscribe((res:ApiCollectionResponse)=>{     
+        if(!res.isSuccessful){
+            this.products = res.data
+        }
+      }) 
+    }
+  }
+
+  
+
+  
   
 }

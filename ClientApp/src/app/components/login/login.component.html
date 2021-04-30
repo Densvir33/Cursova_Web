@@ -12,13 +12,13 @@
               <div class="form-group">
                   <label>Email</label>
                   <input type="text" class="form-control" placeholder="Email"
-                    [(ngModel)]="user.email">
+                    [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
               </div>
 
               <div class="form-group">
                   <label>Password</label>
                   <input type="password" class="form-control" placeholder="Password"
-                    [(ngModel)]="user.email">
+                    [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
               </div>
 
               <div class="row align-items-center">

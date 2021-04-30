@@ -71,20 +71,25 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li class="nav-item">
+                            <li class="nav-item" *ngIf="!isLoggedIn">
                                 <a [routerLink]="['/account/login']" class="nav-link">
                                     Login
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item" *ngIf="!isLoggedIn">
                                 <a [routerLink]="['/account/register']" class="nav-link">
                                     Register
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" *ngIf="isLoggedIn">
                                 <a [routerLink]="['/account/user']" class="nav-link">
                                     User
+                                </a>
+                            </li>
+                            <li class="nav-item" *ngIf="isLoggedIn">
+                                <a [routerLink]="['/account/login']" class="nav-link">
+                                    Logout
                                 </a>
                             </li>
                         </ul>
@@ -113,7 +118,7 @@
 
                       </li>
 
-                      <li class="nav-item">
+                      <li class="nav-item" *ngIf="isLoggedIn">
                           <a [routerLink]="['/share']" class="nav-link">
                               Share                              
                           </a>                          

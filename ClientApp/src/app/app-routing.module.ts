@@ -27,7 +27,7 @@ const routes: Routes = [
   ]},
   {path: 'cart', component:BasketComponent},
   {path: 'products', component:ProductsListComponent},
-  {path: 'products/details', component:ProductViewComponent},
+  {path: 'products/details/:id', component:ProductViewComponent},
   {path: 'share', component: ShareListComponent},
   {path: 'share/details', component: ShareViewComponent},
   {path: 'contact', component: ContactComponent},

@@ -22,8 +22,8 @@
 <!-- Start Top Products Area -->
 <section class="top-products-area pt-100 pb-100">
   <div class="container">
-      <div class="orgo-grid-sorting row align-items-center">
-          <!-- <div class="col-lg-6 col-md-6 result-count">
+      <!-- <div class="orgo-grid-sorting row align-items-center">
+          <div class="col-lg-6 col-md-6 result-count">
               <p>We found <span class="count">10</span> products available for you</p>
           </div>
 
@@ -39,13 +39,13 @@
                   </select>
               </div>
           </div>
-      </div>
-       -->
+      </div> -->
+      
       <div class="row">
           <div class="col-lg-3 col-md-6" *ngFor="let item of products; index as i">
               <div class="top-products-item">
                   <div class="products-image">
-                      <a href="shop-details.html"><img alt="image"></a>
+                      <a [routerLink]="['/products/details/', item.id]"><img alt="image"></a>
 
                       <ul class="products-action">
                         <li>
@@ -60,7 +60,7 @@
 
                   <div class="products-content">
                       <h3>
-                          <a href="shop-details.html">{{item.name}}</a>
+                          <a [routerLink]="['/products/details/', item.id]">{{item.name}}</a>
                       </h3>
                       <div class="price">
                           <span class="new-price">${{item.price}}</span>
@@ -78,55 +78,6 @@
                   </div>
               </div>
           </div>
-
-         
-
-         
-
-         
-
-          
-         
-
-         
-
-          <div class="col-lg-3 col-md-6">
-              <div class="top-products-item">
-                  <div class="products-image">
-                      <a href="shop-details.html"><img  alt="image"></a>
-
-                      <ul class="products-action">
-                        <li>
-                          <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                        </li>
-                      </ul>
-
-                      <div class="sale">
-                          <span>Sale</span>
-                      </div>
-                  </div>
-
-                  <div class="products-content">
-                      <h3>
-                          <a href="shop-details.html">Fresh Banana</a>
-                      </h3>
-                      <div class="price">
-                          <span class="new-price">$17.00</span>
-                          <span class="old-price">$115.00</span>
-                      </div>
-                      <ul class="rating">
-                          <li>
-                              <i class='bx bxs-star'></i>
-                              <i class='bx bxs-star'></i>
-                              <i class='bx bxs-star'></i>
-                              <i class='bx bxs-star'></i>
-                              <i class='bx bx-star'></i>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div> 
-
           <div class="col-lg-12 col-md-12">
               <div class="pagination-area">
                   <a href="#" class="prev page-numbers">

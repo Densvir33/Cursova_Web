@@ -30,16 +30,16 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     console.log(this.newUser)
 
-    // this.accountService.register(this.newUser)
-    // .subscribe((res:ApiResponse)=>{
-    //   if(res.isSuccessful){
-    //     console.log(res.message)
-    //     this.router.navigate(['account/login'])
-    //   }
-    //   else{
+    this.accountService.register(this.newUser)
+    .subscribe((res:ApiResponse)=>{
+      if(res.isSuccessful){
+        console.log(res.message)
+        this.router.navigate(['account/login'])
+      }
+      else{
         
-    //   }
-    // })
+      }
+    })
 }
 
 }

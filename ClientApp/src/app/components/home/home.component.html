@@ -88,11 +88,12 @@
             <div class="col-lg-3 col-md-6" *ngFor="let item of products; index as i">
                 <div class="top-products-item">
                     <div class="products-image">
-                        <a href="shop-details.html"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
+                        <a [routerLink]="['/products/details/', item.id]"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="image"></a>
 
                         <ul class="products-action">
                             <li>
-                                <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
+                                <button
+                                (click)="addToCart(item.id)" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></button>
                             </li>
                         </ul>
 
@@ -103,7 +104,7 @@
 
                     <div class="products-content">
                         <h3>
-                            <a href="shop-details.html">{{item.name}}</a>
+                            <a [routerLink]="['/products/details/', item.id]">{{item.name}}</a>
                         </h3>
                         <div class="price">
                             <span class="new-price">${{item.price}}</span>
@@ -120,9 +121,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-
-           
+            </div>          
             
         </div>
     </div>

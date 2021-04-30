@@ -1,10 +1,11 @@
 import { DiscountDTO } from "./discountDTO";
-import { ProductDTO } from "./productDTO";
+import { ProductInCart } from "./productInCart";
 
 export class OrderDTO{
     id: number;
     name: string;
     isExecuted: boolean;
-    products:Array<ProductDTO>
+    date:Date;
+    products:Array<ProductInCart>
     discounts:Array<DiscountDTO>
 }
