@@ -50,9 +50,9 @@ namespace Service.Implementation
                 _context.Products.Remove(_product);
                 await _context.SaveChangesAsync();
                 result.IsSuccessful = true;
-                
+
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 result.IsSuccessful = false;
                 result.Message = ex.Message;
@@ -67,7 +67,16 @@ namespace Service.Implementation
 
             Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new ProductDTO() { Name = _product.Name, Id = _product.Id };
+            result.Data = new ProductDTO()
+            {
+                Name = _product.Name,
+                Id = _product.Id,
+                Image = _product.Image,
+                Mass = _product.Mass,
+                Price = _product.Price,
+                Property = _product.Property,
+                Category =_product.Category.Name
+            };
 
             return result;
         }
@@ -109,7 +118,7 @@ namespace Service.Implementation
             return result;
         }
 
-        
+
         public async Task<ResultDTO> Pagination(int page = 1, int count = 6) //Передається з фронтенда !!!!
         {
             try
@@ -143,12 +152,20 @@ namespace Service.Implementation
         {
             CollectionResultDTO<List<ProductDTO>> result = new CollectionResultDTO<List<ProductDTO>>();
 
-            List<Product> products = await _context.Products.Include(x=>x.Category).Where(x=>x.Category.Name==name).ToListAsync();
+            List<Product> products = await _context.Products.Include(x => x.Category).Where(x => x.Category.Name == name).ToListAsync();
 
             //result.Data = (products.Select(x => _mapper.Map<ProductDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = products.Select(x => new ProductDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = products.Select(x => new ProductDTO() {
+                Name = x.Name,
+                Id = x.Id,
+                Image = x.Image,
+                Mass = x.Mass,
+                Price = x.Price,
+                Property = x.Property,
+                Category = x.Category.Name
+            }).ToList();
 
             return result;
         }

@@ -76,7 +76,12 @@ namespace Service.Implementation
 
             Order _Order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new OrderDTO() { Name = _Order.Name, Id = _Order.Id };
+            result.Data = new OrderDTO() { 
+                Name = _Order.Name,
+                Id = _Order.Id,
+                Date = _Order.Date,
+                IsExecuted = _Order.IsExecuted
+            };
 
             return result;
         }
@@ -90,7 +95,12 @@ namespace Service.Implementation
             //result.Data = (Orders.Select(x => _mapper.Map<OrderDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = Orders.Select(x => new OrderDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = Orders.Select(x => new OrderDTO() {
+                Name = x.Name,
+                Id = x.Id,
+                Date = x.Date,
+                IsExecuted = x.IsExecuted
+            }).ToList();
 
             return result;
         }

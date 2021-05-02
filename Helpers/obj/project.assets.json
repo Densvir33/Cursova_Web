@@ -6728,23 +6728,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ernendo\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Дім\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\Helpers.csproj",
+      "projectUniqueName": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj",
       "projectName": "Helpers",
-      "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\Helpers.csproj",
-      "packagesPath": "C:\\Users\\ernendo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Helpers\\obj\\",
+      "projectPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Helpers\\Helpers.csproj",
+      "packagesPath": "C:\\Users\\Дім\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Helpers\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ernendo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Дім\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6758,11 +6754,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Models\\Models.csproj"
+            "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Models\\Models.csproj"
             },
-            "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\ernendo\\Desktop\\Cursova_Web\\Service\\Service.csproj"
+            "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\Дім\\Documents\\GitHub\\Cursova_Web\\Service\\Service.csproj"
             }
           }
         }
@@ -6800,7 +6796,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -74,7 +74,10 @@ namespace Service.Implementation
 
             Category _Category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new CategoryDTO() { Name = _Category.Name, Id = _Category.Id };
+            result.Data = new CategoryDTO() { 
+                Name = _Category.Name,
+                Id = _Category.Id,
+            };
 
             return result;
         }
@@ -88,7 +91,10 @@ namespace Service.Implementation
             //result.Data = (Categories.Select(x => _mapper.Map<CategoryDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = Categories.Select(x => new CategoryDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = Categories.Select(x => new CategoryDTO() {
+                Name = x.Name,
+                Id = x.Id 
+            }).ToList();
 
             return result;
         }

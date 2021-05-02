@@ -75,7 +75,14 @@ namespace Service.Implementation
 
             Discount _Discount = await _context.Discounts.FirstOrDefaultAsync(x => x.Id == id);
 
-            result.Data = new DiscountDTO() { Name = _Discount.Name, Id = _Discount.Id };
+            result.Data = new DiscountDTO() {
+                Name = _Discount.Name,
+                Id = _Discount.Id,
+                DiscountMoney=_Discount.DiscountMoney,
+                DiscountPercent=_Discount.DiscountPercent,
+                StartDate=_Discount.StartDate,
+                StopDate = _Discount.StopDate
+            };
 
             return result;
         }
@@ -89,7 +96,14 @@ namespace Service.Implementation
             //result.Data = (Discounts.Select(x => _mapper.Map<DiscountDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = Discounts.Select(x => new DiscountDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = Discounts.Select(x => new DiscountDTO() { 
+                Name = x.Name,
+                Id = x.Id,
+                DiscountMoney = x.DiscountMoney,
+                DiscountPercent = x.DiscountPercent,
+                StartDate = x.StartDate,
+                StopDate = x.StopDate
+            }).ToList();
 
             return result;
         }
