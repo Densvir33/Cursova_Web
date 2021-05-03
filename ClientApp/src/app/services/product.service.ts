@@ -41,4 +41,13 @@ updateProduct(product: ProductDTO):Observable<ApiCollectionResponse>{
   return this.http.patch<ApiCollectionResponse>(this.linkString + '/', product)
 }
 
+findByTitle(title: any): Observable<ApiCollectionResponse> {
+  return this.http.get<ApiCollectionResponse>(`${this.linkString}?title=${title}`);
+}
+
+getProductsWithParams(params: any):Observable<ApiCollectionResponse>{
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/getAllParams'+ {params});
+
+}
+
 }

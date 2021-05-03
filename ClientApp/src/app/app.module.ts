@@ -23,6 +23,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
 import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -43,16 +45,19 @@ import { AddCategoryComponent } from './components/categories-crud/add-category/
     ErrorPageComponent,
     CheckoutComponent,
     AddProductComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    PaginationComponent
 
   ],
-  imports: [
+  imports: [    
     BrowserModule,
+    NgxPaginationModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
+    
 
     
   ],
