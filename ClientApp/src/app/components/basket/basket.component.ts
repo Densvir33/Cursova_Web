@@ -17,6 +17,7 @@ import { ProductViewComponent } from '../product-view/product-view.component';
 })
 export class BasketComponent implements OnInit {
   productsInCart:Array<number> =[]
+
   products: Array<ProductInCart> =[
     {id: 1,
     name: 'Darling Oranges',
@@ -33,11 +34,10 @@ export class BasketComponent implements OnInit {
     private accountService:AccountService) { }
 
   ngOnInit() {
-    this.IsLogin()
+    this.LoadOrderProducts()
   }
 
-  onDelete(id:number){   
-    
+  onDelete(id:number){
     this.products = this.products.filter(item => item.id !== id);
     console.log(this.products);
   }
@@ -50,20 +50,24 @@ export class BasketComponent implements OnInit {
     this.products[id-1].quantity--;
   }
 
-  IsLogin(){
+  LoadOrderProducts(){
     if(localStorage.getItem('id_token')){
-      let token = localStorage.getItem('id_token')
-      this.accountService.getUserID()
+      let userId = this.accountService.getUserID()
 
-      
+      this.orderService.getOrderByUserId(userId)
+      .subscribe((res:ApiCollectionResponse)=>{     
+        if(!res.isSuccessful){
+            this.products = res.data
+        }
+      })
     }
     else{
-
       let tmp = localStorage.getItem('currentCart')
       this.productsInCart = JSON.parse(tmp!)
       console.log(this.productsInCart)
         
-      this.productService.getProductToCart(this.productsInCart).subscribe((res:ApiCollectionResponse)=>{     
+      this.productService.getProductToCart(this.productsInCart)
+      .subscribe((res:ApiCollectionResponse)=>{     
         if(!res.isSuccessful){
             this.products = res.data
         }
@@ -71,7 +75,7 @@ export class BasketComponent implements OnInit {
     }
   }
 
-  
+ 
 
   
   

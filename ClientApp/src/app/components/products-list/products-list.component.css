@@ -85,3 +85,13 @@ img {
   content: url("https://api.iconify.design/bx-bx-chevron-right.svg?color=gray&height=24");
   vertical-align: sub;
 }
+
+.ng-select.custom {
+  border: 0px;
+  min-height: 0px;
+  border-radius: 0;
+}
+.ng-select.custom .ng-select-container {
+  min-height: 0px;
+  border-radius: 0;
+}

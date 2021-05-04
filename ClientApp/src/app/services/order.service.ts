@@ -28,6 +28,12 @@ export class OrderService {
  getOrder(id:number):Observable<ApiCollectionResponse> {
    return this.http.get<ApiCollectionResponse>(this.linkString + '/' + id) 
  }
+
+ getOrderByUserId(id:number):Observable<ApiCollectionResponse> {
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/user/' + id) 
+}
+
+
  
  updateOrder(order: OrderDTO):Observable<ApiCollectionResponse>{
    return this.http.patch<ApiCollectionResponse>(this.linkString + '/', order)

@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiCollectionResponse, ApiLoginResponse, ApiResponse, ApiSingleResponse } from '../models/apiResponse';
 import { LoginDTO } from '../models/loginDTO';
 import { UserDTO } from '../models/userDTO';
@@ -28,9 +29,7 @@ export class AccountService {
     localStorage.removeItem('id_token')
   }
 
-  isAdmin(){
-
-  }
+  isAdmin(){}
 
   IsLoggedIn(){
     const token = localStorage.getItem('id_token')
@@ -60,12 +59,24 @@ export class AccountService {
       let decodedJwtJsonData = window.atob(jwtData)
       let decodedJwtData = JSON.parse(decodedJwtJsonData)
       let id = decodedJwtData.id
-      console.log('jwtData: ' + jwtData)
-      console.log('decodedJwtJsonData: ' + decodedJwtJsonData)
-      console.log('ID: ' + id)
+      // console.log('jwtData: ' + jwtData)
+      // console.log('decodedJwtJsonData: ' + decodedJwtJsonData)
+      // console.log('ID: ' + id)
       return id
     }      
 }
+
+  getLastUserOrderId(userId:string){
+    return this.http.get<ApiCollectionResponse>(this.linkString + '/' + userId)
+  }
+
+  headers:HttpHeaders = new HttpHeaders();
+  addProductToOrder(params: any):Observable<ApiResponse>{
+    
+    this.headers.append('Content-Type', 'application/json; charset=utf8');
+    return this.http.post<ApiResponse>(this.linkString + '/order/', {headers:this.headers, params: params});
+  
+  }
 
 
 

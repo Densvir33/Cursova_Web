@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiCollectionResponse, ApiResponse } from '../models/apiResponse';
 import { ProductInCart } from '../models/productInCart';
 import { AccountService } from './account.service';
+import { OrderService } from './order.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,32 +12,50 @@ import { AccountService } from './account.service';
 export class CartService {
   newCart: Array<number> = []
   constructor(private http: HttpClient,
-    private accountService:AccountService) { }
+    private accountService:AccountService,
+    private orderService:OrderService) { }
 
-  linkString: string = 'https://localhost:44323/cart'
+  linkString: string = 'https://localhost:44323/order'
 
   // addProductToCart(id:number):Observable<ApiResponse> {
   //   return this.http.post<ApiResponse>(this.linkString + id)       
   // }
 
-  updateProductInCart(product:ProductInCart) {
-    return this.http.post<ApiCollectionResponse>(this.linkString + '/update', product)       
-  }
+  // updateProductInCart(product:ProductInCart) {
+  //   return this.http.post<ApiCollectionResponse>(this.linkString + '/update', product)       
+  // }
 
-  getProductFromCart(userID:number): Observable<ApiCollectionResponse>{
-    return this.http.get<ApiCollectionResponse>(this.linkString + '/' + userID);
-  }
+  // getProductFromCart(userID:number): Observable<ApiCollectionResponse>{
+  //   return this.http.get<ApiCollectionResponse>(this.linkString + '/' + userID);
+  // }
 
-  deleteProductFromCart(id:number): Observable<ApiResponse>{
-    return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
-  }
+  // deleteProductFromCart(id:number): Observable<ApiResponse>{
+  //   return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
+  // }
+
+  headers:HttpHeaders = new HttpHeaders();
+
 
   addToCart(id:number){
     const token = localStorage.getItem('id_token')
     if(token){
       let userId = this.accountService.getUserID();
-      let UserCart = {userId: userId, cartId: id}
-      return this.http.post<ApiResponse>(this.linkString, UserCart)
+      let orderId = this.orderService.getOrderByUserId(userId)
+
+      let params: any = {};   
+
+      params[`orderId`] = orderId ;    
+      params[`productId`] = id;
+      
+      console.log(params)
+
+      this.accountService.addProductToOrder(params)
+      .subscribe((res:ApiResponse)=>{     
+        if(!res.isSuccessful){
+            console.log(res)
+        }
+      })
+      return true 
     }
     else{ 
 
@@ -50,8 +69,9 @@ export class CartService {
       }   
       localStorage.setItem('currentCart', JSON.stringify(this.newCart))
   
-      return ApiResponse    
+      return true    
     }
   }
+  
 
 }

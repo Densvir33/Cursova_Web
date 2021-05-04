@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
 import { UpdateProductComponent } from './components/product-crud/update-product/update-product.component';
 import { ProductViewComponent } from './components/product-view/product-view.component';
+import { ProductsInCategoryListComponent } from './components/products-in-category-list/products-in-category-list.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShareListComponent } from './components/share-list/share-list.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'cart', component:BasketComponent},
   {path: 'products', component:ProductsListComponent},
   {path: 'products/details/:id', component:ProductViewComponent},
+  {path: 'products/category/:id', component:ProductsInCategoryListComponent},
   {path: 'share', component: ShareListComponent},
   {path: 'share/details', component: ShareViewComponent},
   {path: 'contact', component: ContactComponent},

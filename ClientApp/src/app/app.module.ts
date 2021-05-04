@@ -24,7 +24,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
 import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { CommonModule } from '@angular/common';
+import { ProductsInCategoryListComponent } from './components/products-in-category-list/products-in-category-list.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     CheckoutComponent,
     AddProductComponent,
     AddCategoryComponent,
-    PaginationComponent
+    ProductsInCategoryListComponent
 
   ],
   imports: [    
@@ -57,6 +59,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
+    NgSelectModule,
+    CommonModule
     
 
     

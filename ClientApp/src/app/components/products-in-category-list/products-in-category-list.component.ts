@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCollectionResponse } from 'src/app/models/apiResponse';
+import { ActivatedRoute } from '@angular/router';
+import { ApiCollectionResponse, ApiSingleResponse } from 'src/app/models/apiResponse';
 import { ProductDTO } from 'src/app/models/productDTO';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-products-list',
-  templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.css']
+  selector: 'app-products-in-category-list',
+  templateUrl: './products-in-category-list.component.html',
+  styleUrls: ['./products-in-category-list.component.css']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsInCategoryListComponent implements OnInit {
 
   products:Array<ProductDTO>
-  
+  category:string;
+  id: string 
   //tutorials: Tutorial[] = [];
   //currentTutorial?: Tutorial;
   currentIndex = -1;
@@ -22,10 +25,27 @@ export class ProductsListComponent implements OnInit {
   pageSize:number = 4;
   pageSizes = [1, 4, 8, 16];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    private categoryService:CategoryService,
+    private route:ActivatedRoute,) { }
 
   ngOnInit() {
-    this.loadProducts();    
+    this.loadProducts();   
+    this.getCategory() 
+  }
+
+  getCategory(){
+    this.id = this.route.snapshot.paramMap.get('id')!
+    console.log(this.id)
+    if(this.id != null){
+      this.categoryService.getCategory(parseInt(this.id))
+      .subscribe((res:ApiSingleResponse)=>{
+        if(!res.isSuccessful){
+          console.log(res.data)
+          this.category = res.data;
+        }
+      })
+    }
   }
 
   getRequestParams(page: number, pageSize: number){

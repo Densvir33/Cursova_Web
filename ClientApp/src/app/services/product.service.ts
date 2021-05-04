@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiCollectionResponse,ApiResponse, ApiSingleResponse } from '../models/apiResponse';
@@ -13,7 +13,8 @@ export class ProductService {
 
 constructor(private http: HttpClient) { }
 
- linkString: string = 'https://localhost:44323/api/product'
+  headers:HttpHeaders = new HttpHeaders();
+  linkString: string = 'https://localhost:44323/api/product'
 
 getProducts(): Observable<ApiCollectionResponse>{
   return this.http.get<ApiCollectionResponse>(this.linkString + '/getAll');
@@ -33,7 +34,8 @@ getProduct(id:number):Observable<ApiSingleResponse> {
 
 getProductToCart(productsID:Array<number>):Observable<ApiCollectionResponse>{
   let params = new HttpParams();
-  params = params.append('product', productsID.join(', '));  
+  // params = params.append('product', productsID.join(', '));  
+  params = params.append('myArray', JSON.stringify(productsID));  
   return this.http.get<ApiCollectionResponse>(this.linkString, { params: params })
 }
 
@@ -41,13 +43,13 @@ updateProduct(product: ProductDTO):Observable<ApiCollectionResponse>{
   return this.http.patch<ApiCollectionResponse>(this.linkString + '/', product)
 }
 
-findByTitle(title: any): Observable<ApiCollectionResponse> {
-  return this.http.get<ApiCollectionResponse>(`${this.linkString}?title=${title}`);
+getProductsWithParams(params: any):Observable<ApiCollectionResponse>{
+  this.headers.append('Content-Type', 'application/json; charset=utf8');
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/getWithParams', {headers:this.headers, params: params});
 }
 
-getProductsWithParams(params: any):Observable<ApiCollectionResponse>{
-  return this.http.get<ApiCollectionResponse>(this.linkString + '/getAllParams'+ {params});
-
+getProductsByCategory(categoryName:string):Observable<ApiCollectionResponse>{
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/category/' + categoryName);
 }
 
 }
