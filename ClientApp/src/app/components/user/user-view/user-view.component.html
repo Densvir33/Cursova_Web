@@ -8,7 +8,8 @@
                     <div class="col-sm-4 bg-c-lite-green user-profile">
                         <div class="card-block text-center text-white">
                             <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                            <h6 class="f-w-600">Hembo Tingor</h6>
+                            <h6 class="f-w-600" *ngIf="!isEdit">{{currentUser.fullname}}</h6>
+                            <input type="text" [(ngModel)]="newUserData.fullname" *ngIf="isEdit" >
                         </div>
                     </div>
 
@@ -19,26 +20,34 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <p class="m-b-10 f-w-600">Email</p>
-                                    <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                    <h6 class="text-muted f-w-400" *ngIf="!isEdit">{{currentUser.email}}</h6>
+                                    <input type="text" [(ngModel)]="newUserData.email" *ngIf="isEdit" >
                                 </div>
                                 <div class="col-sm-6">
                                     <p class="m-b-10 f-w-600">Phone</p>
-                                    <h6 class="text-muted f-w-400">98979989898</h6>
+                                    <h6 class="text-muted f-w-400" *ngIf="!isEdit">{{currentUser.phonenumber}}</h6>
+                                    <input type="text" [(ngModel)]="newUserData.phonenumber" *ngIf="isEdit" >
                                 </div>
                             </div>
                             
                             <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Adress</h6>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600">Adress 1</p>
-                                    <h6 class="text-muted f-w-400">New York</h6>
+                                    <p class="m-b-10 f-w-600">Address 1</p>
+                                    <h6 class="text-muted f-w-400" *ngIf="!isEdit">New York</h6>
+                                    <input type="text" [(ngModel)]="newUserData.email" *ngIf="isEdit" >
                                 </div>
                                 <div class="col-sm-6">
-                                    <p class="m-b-10 f-w-600">Adress 2</p>
-                                    <h6 class="text-muted f-w-400">Ukraine</h6>
+                                    <p class="m-b-10 f-w-600">Address 2</p>
+                                    <h6 class="text-muted f-w-400" *ngIf="!isEdit">Ukraine</h6>
+                                    <input type="text" [(ngModel)]="newUserData.email" *ngIf="isEdit" >
                                 </div>
                             </div>
-                            <a class="default-btn">EDIT</a>
+                            <button class="default-btn" (click)="onEdit()" *ngIf="!isEdit">EDIT</button>
+                            <div *ngIf="isEdit" class="two-button">
+                                <button class="default-btn" (click)="onSave()" >SAVE</button>
+                                <button class="default-btn" (click)="onCancel()">CANCEL</button>
+                            </div>                            
 
                             
 

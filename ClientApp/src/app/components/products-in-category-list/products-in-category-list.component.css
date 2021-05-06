@@ -1,0 +1,93 @@
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #f99459;
+  color: #ffffff;
+  -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
+  box-shadow: 0 2px 10px 0 #d8dde6;
+  padding: 0;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+  width: 35px;
+  height: 35px;
+  margin: 0 3px;
+  /* display: inline-block; */
+  background-color: #ffffff;
+  line-height: 35px;
+  color: #111111;
+  -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
+  box-shadow: 0 2px 10px 0 #d8dde6;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+}
+
+.my-pagination /deep/ .ngx-pagination .disabled {
+  cursor: default;
+  padding: 0;
+  color: #cacaca;
+}
+
+.my-pagination /deep/ .ngx-pagination a {
+  padding: 0;
+  border-radius: 50px;
+  height: 35px;
+}
+.my-pagination /deep/ .ngx-pagination a:hover {
+  background: #f99459;
+  color: #ffffff;
+  -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
+  box-shadow: 0 2px 10px 0 #d8dde6;
+  height: 35px;
+}
+.my-pagination /deep/ .ngx-pagination a:focus {
+  background: #f99459;
+  color: #ffffff;
+  -webkit-box-shadow: 0 2px 10px 0 #d8dde6;
+  box-shadow: 0 2px 10px 0 #d8dde6;
+  height: 35px;
+}
+
+.my-pagination /deep/ .ngx-pagination .small-screen {
+  width: 60px;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous.disabled::before {
+  color: #cacaca;
+  margin-right: 0;
+  content: url("https://api.iconify.design/bx-bx-chevron-left.svg?color=gray&height=24");
+  vertical-align: sub;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous a::before {
+  margin-right: 0;
+  content: url("https://api.iconify.design/bx-bx-chevron-left.svg?height=24");
+  vertical-align: sub;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next a::after {
+  margin-left: 0;
+  content: url("https://api.iconify.design/bx-bx-chevron-right.svg?height=24");
+  vertical-align: sub;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next.disabled::after {
+  color: #cacaca;
+  margin-left: 0;
+  content: url("https://api.iconify.design/bx-bx-chevron-right.svg?color=gray&height=24");
+  vertical-align: sub;
+}
+
+.ng-select.custom {
+  border: 0px;
+  min-height: 0px;
+  border-radius: 0;
+}
+.ng-select.custom .ng-select-container {
+  min-height: 0px;
+  border-radius: 0;
+}

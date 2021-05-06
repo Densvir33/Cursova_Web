@@ -159,3 +159,25 @@ td {
 .ptb-100 {
   padding-top: 40px;
 }
+
+button {
+  border: none;
+}
+
+input {
+  background: none;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #f99459;
+  font-size: 16px;
+}
+input:focus {
+  border-color: #f35320;
+}
+
+.two-button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -39px;
+  margin-top: 25px;
+}

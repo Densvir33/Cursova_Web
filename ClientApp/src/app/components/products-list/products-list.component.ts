@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCollectionResponse } from 'src/app/models/apiResponse';
 import { ProductDTO } from 'src/app/models/productDTO';
+import { CartService } from 'src/app/services/cart.service';
+import { LoadService } from 'src/app/services/load.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -22,9 +24,16 @@ export class ProductsListComponent implements OnInit {
   pageSize:number = 4;
   pageSizes = [1, 4, 8, 16];
 
-  constructor(private productService: ProductService) { }
+  loading: boolean = false;
+
+
+  constructor(private productService: ProductService,
+    private cartService: CartService,
+    private spinner:LoadService,) { }
 
   ngOnInit() {
+    this.loading = true;    
+    this.spinner.Spinner(this.loading)
     this.loadProducts();    
   }
 
@@ -46,19 +55,21 @@ export class ProductsListComponent implements OnInit {
     console.log(params)
     this.productService.getProductsWithParams(params)
     .subscribe(
-      (res:ApiCollectionResponse) => {
+      (res:ApiCollectionResponse) => {       
         this.count = parseInt(res.message)
         this.products = res.data;
         console.log(res);
       },
-      error => {
-        console.log(error);
-      });
+      error => {console.log(error);});
+      this.loading = false
+      this.spinner.Spinner(this.loading)
   }
 
   handlePageChange(event: number) {
+    this.loading = true;    
+    this.spinner.Spinner(this.loading)
     this.page = event;
-    this.loadProducts();
+    this.loadProducts();    
   }
 
   handlePageSizeChange(event: any) {
@@ -71,6 +82,10 @@ export class ProductsListComponent implements OnInit {
     this.loadProducts();
     //this.currentTutorial = undefined;
     this.currentIndex = -1;
+  }
+
+  addToCart(Id:number){
+    this.cartService.addToCart(Id)    
   }
 
 }

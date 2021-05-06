@@ -78,6 +78,11 @@ export class AccountService {
   
   }
 
+  updateUserData(newData:UserDTO):Observable<ApiCollectionResponse>{
+    return this.http.post<ApiCollectionResponse>(this.linkString + '/', newData)
+  }
+
+
 
 
 

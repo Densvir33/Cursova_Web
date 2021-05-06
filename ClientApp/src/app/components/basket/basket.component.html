@@ -7,7 +7,7 @@
                         <h2>Cart</h2>
                         <ul>
                             <li>
-                                <a href="index.html">Home</a>
+                                <a [routerLink]="['/']">Home</a>
                             </li>
                             <li>Cart</li>
                         </ul>
@@ -18,9 +18,15 @@
     </div>
     <!-- End Page Banner -->
       
+    <div *ngIf="isEmpty" class="emptyCart"> 
+        <div class="section-title">
+            <h2>Your cart is empty</h2>
+            <a [routerLink]="['/products']" class="default-btn">Back to Shop</a>
+        </div>
+    </div>
       
       <!-- Start Cart Area -->
-       <section class="cart-area ptb-100">
+       <section class="cart-area ptb-100" *ngIf="!isEmpty">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
@@ -29,7 +35,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Product</th>
+                                        <th scope="col">#</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Unit Price</th>
                                         <th scope="col">Quantity</th>
@@ -40,7 +46,7 @@
                                     <tr *ngFor="let item of products; index as i">
                                         <td class="product-thumbnail">
                                             <a href="#">
-                                                <img  alt="item">
+                                                <span class="unit-amount">{{i+1}}</span>
                                             </a>
                                         </td>
                                         <td class="product-name">
@@ -55,7 +61,7 @@
                                                     <i class='bx bx-minus'></i>
                                                 </span>
                                                 <input pattern="[0-9]*" maxlength="2" number
-                                                    type="text" [value]="item.quantity"
+                                                    type="number" [value]="item.quantity"
                                                     [(ngModel)] ="item.quantity" [ngModelOptions]="{standalone: true}">
                                                 
                                                 <span class="plus-btn" (click)="increment(item.id)">
@@ -64,7 +70,7 @@
                                             </div>
                                         </td>
                                         <td class="product-subtotal">
-                                            <span class="subtotal-amount">${{item.price}}</span>
+                                            <span class="subtotal-amount">${{item.price * item.quantity}}</span>
                                             <button  class="remove" (click)="onDelete(item.id)">
                                                 <i class='bx bx-trash bx-sm'></i>
                                             </button>
@@ -87,15 +93,15 @@
 
                         <div class="cart-totals">
                             <h3>Cart Totals</h3>
-                            <ul>
+                            <ul >
                                 <li>Subtotal 
-                                    <span>$1683.50</span>
+                                    <span>${{totalCart.subtotal}}</span>
                                 </li>
                                 <li>Shipping 
-                                    <span>$30.00</span>
+                                    <span>${{totalCart.shipping}}</span>
                                 </li>
                                 <li>Total 
-                                    <span><b>$1713.50</b></span>
+                                    <span><b>${{totalCart.total}}</b></span>
                                 </li>
                             </ul>
                             <a [routerLink]="['/checkout']"class="default-btn">

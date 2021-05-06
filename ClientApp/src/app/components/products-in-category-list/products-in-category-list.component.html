@@ -8,10 +8,10 @@
                   <h2>Shop List</h2>
                   <ul>
                       <li>
-                          <a href="index.html">Home</a>
+                          <a [routerLink]="['']">Home</a>
                       </li>
-                      <li>Shop List</li>
-                      <li></li>
+                      <li><a [routerLink]="['/products']">Shop List</a></li>
+                      <li [(ngModel)]="category" ngDefaultControl >{{category}}</li>
                   </ul>
               </div>
           </div>
@@ -47,8 +47,9 @@
 
                       <ul class="products-action">
                         <li>
-                          <a href="cart.html" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></a>
-                        </li>
+                          <button
+                          (click)="addToCart(item.id)" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="bx bx-cart"></i></button>
+                      </li>
                       </ul>
 
                       <!-- <div class="sale">

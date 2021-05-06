@@ -39,10 +39,8 @@ export class NavbarComponent implements OnInit {
   loadCategory(){    
     this.categoryService.getCategories()
     .subscribe((res:ApiCollectionResponse)=>{
-      console.log(res.data)
       this.categories = res.data
         if(res.isSuccessful){
-          console.log(res.data)
           this.categories = res.data
         }
     })
