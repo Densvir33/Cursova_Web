@@ -452,3 +452,6 @@ C:\Users\ernendo\Desktop\Cursova_Web\Store\obj\Debug\netcoreapp3.1\Store.genrunt
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Дім\Documents\GitHub\Cursova_Web\Store\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.dll

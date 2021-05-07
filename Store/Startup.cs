@@ -19,6 +19,7 @@ using Service.Interface;
 using Service.Implementation;
 using Models.Entities;
 using Helpers.Helpers;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace Store
 {
@@ -71,6 +72,12 @@ namespace Store
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+            //services.Configure<FormOptions>(o => {
+            //    o.ValueLengthLimit = int.MaxValue;
+            //    o.MultipartBodyLengthLimit = int.MaxValue;
+            //    o.MemoryBufferThreshold = int.MaxValue;
+            //});
 
             services.AddAutoMapper(typeof(Startup));
 

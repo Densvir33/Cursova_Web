@@ -13,7 +13,7 @@ namespace Models.Entities
         public string Image { get; set; }
         public int Age { get; set; }
         public string Property { get; set; }
-
+        public string Adress { get; set; }
 
         /*Navigation Property*/
 

@@ -1,4 +1,5 @@
-﻿using Models.DTO;
+﻿using Microsoft.AspNetCore.Http;
+using Models.DTO;
 using Models.DTO.IdentityDTO;
 using Models.DTO.ResultDTO;
 using System;
@@ -12,6 +13,5 @@ namespace Service.Interface
     {
         Task<ResultLoginDTO> Login(LoginDTO user);
         Task<CollectionResultDTO<RegisterDTO>> Register(RegisterDTO newUser);
-
     }
 }

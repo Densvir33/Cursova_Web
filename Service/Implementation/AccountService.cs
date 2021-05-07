@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Models.DTO.IdentityDTO;
 using Models.DTO.ResultDTO;
 using Models.Entities;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using System.Net.Http.Headers;
 
 namespace Service.Implementation
 {
@@ -17,7 +22,8 @@ namespace Service.Implementation
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtTokenService;
-        public AccountService(ApplicationContext context, UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtTokenService )
+        
+        public AccountService(ApplicationContext context, UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtTokenService)
         {
             _context = context;
             _userManager = userManager;
@@ -71,5 +77,6 @@ namespace Service.Implementation
             };
 
         }
+
     }
 }

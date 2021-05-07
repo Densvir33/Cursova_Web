@@ -91,7 +91,7 @@ namespace Store.Controllers
             }
         }
 
-        [HttpGet("{name}")]
+        [HttpGet("category/{name}")]
         //[Authorize(Roles = "Admin")]
         public async Task<ResultDTO> GetProductsByCategory(string name)
         {

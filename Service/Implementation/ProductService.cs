@@ -75,7 +75,7 @@ namespace Service.Implementation
                 Mass = _product.Mass,
                 Price = _product.Price,
                 Property = _product.Property,
-                Category =_product.Category.Name
+                Category = _product.Category.Name
             };
 
             return result;
@@ -124,20 +124,37 @@ namespace Service.Implementation
             try
             {
                 //int pageSize = 3;
-                List<ProductDTO> cusvm = _context.Products.Include(x => x.Category)
-                    .Skip((page - 1) * count)
-                    .Take(count).ToList()
-                    .Select(c => new ProductDTO
-                    {
-                        Id = c.Id,
-                        Name = c.Name,
-                        Price = c.Price,
-                        Property = c.Property,
-                        Mass = c.Mass,
-                        Category = c.Category.Name,
-                    }).ToList();
+                //List<ProductDTO> cusvm = _context.Products.Include(x => x.Category)
+                //    .Skip((page - 1) * count)
+                //    .Take(count).ToList()
+                //    .Select(c => new ProductDTO
+                //    {
+                //        Id = c.Id,
+                //        Name = c.Name,
+                //        Price = c.Price,
+                //        Property = c.Property,
+                //        Mass = c.Mass,
+                //        Category = c.Category.Name,
+                //    }).ToList();
 
-                return new CollectionResultDTO<ProductDTO> { };
+                CollectionResultDTO<List<ProductDTO>> result = new CollectionResultDTO<List<ProductDTO>>();
+                List<Product> cusvm = await _context.Products.Include(x => x.Category)
+                    .Skip((page - 1) * count)
+                    .Take(count).ToListAsync();
+
+                result.Message = _context.Products.Count().ToString();
+                result.IsSuccessful = true;
+                result.Data = cusvm.Select(c => new ProductDTO()
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Price = c.Price,
+                    Property = c.Property,
+                    Mass = c.Mass,
+                    //      Category = c.Category.Name,
+                }).ToList();
+
+                return result;
             }
             catch (Exception ex)
             {
@@ -157,7 +174,8 @@ namespace Service.Implementation
             //result.Data = (products.Select(x => _mapper.Map<ProductDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = products.Select(x => new ProductDTO() {
+            result.Data = products.Select(x => new ProductDTO()
+            {
                 Name = x.Name,
                 Id = x.Id,
                 Image = x.Image,
