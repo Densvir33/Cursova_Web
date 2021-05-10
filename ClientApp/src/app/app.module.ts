@@ -4,13 +4,18 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BasketComponent } from './components/basket/basket.component';
@@ -23,13 +28,30 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
 import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
+
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
+
 import { ProductsInCategoryListComponent } from './components/products-in-category-list/products-in-category-list.component';
+
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { UploadComponent } from './components/upload/upload.component';
+
+import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navbar.component';
+import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
+import { AdminCategoryComponent } from './components/admin/admin-tables/admin-category/admin-category.component';
+import { AdminProductComponent } from './components/admin/admin-tables/admin-product/admin-product.component';
+import { AdminShareComponent } from './components/admin/admin-tables/admin-share/admin-share.component';
+import { AdminUsersComponent } from './components/admin/admin-tables/admin-users/admin-users.component';
+import { AdminOrdersComponent } from './components/admin/admin-tables/admin-orders/admin-orders.component';
+
+       
+      
 const customNotifierOptions: NotifierOptions = {
   position: {
 		horizontal: {
@@ -91,7 +113,20 @@ const customNotifierOptions: NotifierOptions = {
     CheckoutComponent,
     AddProductComponent,
     AddCategoryComponent,
-    ProductsInCategoryListComponent
+    ProductsInCategoryListComponent,
+    UploadComponent,
+
+
+    AdminNavbarComponent,
+    AdminSidebarComponent,
+    AdminDashboardComponent,
+    AdminLayoutComponent,
+
+    AdminCategoryComponent,
+    AdminProductComponent,
+    AdminShareComponent,
+    AdminUsersComponent,
+    AdminOrdersComponent
 
   ],
   imports: [    
@@ -106,10 +141,7 @@ const customNotifierOptions: NotifierOptions = {
     CommonModule,
     NotifierModule.withConfig(customNotifierOptions),
     ReactiveFormsModule,
-    NgxSpinnerModule
-    
-
-    
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

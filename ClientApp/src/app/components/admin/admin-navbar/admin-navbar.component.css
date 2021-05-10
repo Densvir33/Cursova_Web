@@ -1,0 +1,14 @@
+@import url("../../../../assets/css/argon.css");
+
+.navbar-top {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  background-color: transparent;
+
+  height: 95px;
+}

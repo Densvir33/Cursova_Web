@@ -17,7 +17,7 @@ export class CartService {
     private orderService:OrderService,
     private notifier: NotifierService) { }
 
-  linkString: string = 'https://localhost:44323/order'
+  linkString: string = 'https://localhost:44323/api/order'
 
   // addProductToCart(id:number):Observable<ApiResponse> {
   //   return this.http.post<ApiResponse>(this.linkString + id)       
@@ -34,6 +34,7 @@ export class CartService {
   // deleteProductFromCart(id:number): Observable<ApiResponse>{
   //   return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
   // }
+
 
   headers:HttpHeaders = new HttpHeaders();
 

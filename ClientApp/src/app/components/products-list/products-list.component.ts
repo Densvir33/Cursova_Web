@@ -22,7 +22,7 @@ export class ProductsListComponent implements OnInit {
   page:number = 1;
   count = 0;
   pageSize:number = 4;
-  pageSizes = [1, 4, 8, 16];
+  pageSizes = [4, 8, 16];
 
   loading: boolean = false;
 

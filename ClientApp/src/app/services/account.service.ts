@@ -85,5 +85,16 @@ export class AccountService {
 
 
 
+  uploadPhoto(id:string, file:FormData){
+    this.headers.append('Content-Type', 'multipart/form-data')
+    
+    return this.http.post('https://localhost:44323/api/account/upload/' + 
+        id, file, {headers:this.headers})
+  }
+
+
+  getUsers(){
+    return this.http.get<ApiCollectionResponse>(this.linkString)
+  }
 
 }

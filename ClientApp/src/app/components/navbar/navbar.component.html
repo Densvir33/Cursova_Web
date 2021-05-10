@@ -39,9 +39,9 @@
       <div class="container">
           <div class="main-responsive-menu">
               <div class="logo">
-                  <a href="index.html">
+                  <a [routerLink]="['']">
                       <!-- <img src="assets/img/logo.png" alt="image"> -->
-                      Hello
+                      ADProject
                   </a>
               </div>
           </div>
@@ -51,9 +51,9 @@
   <div class="main-navbar">
       <div class="container">
           <nav class="navbar navbar-expand-md navbar-light">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" [routerLink]="['']">
                   <!-- <img src="assets/img/logo.png" alt="image"> -->
-                  Hello
+                  ADProject
               </a>
 
               <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -138,7 +138,7 @@
 
                       <div class="option-item">
                           <div class="cart-btn">
-                              <a [routerLink]="['cart']">
+                              <a [routerLink]="['/cart']">
                                   <i class='bx bx-cart'></i>
                                   <span>0</span>
                               </a>

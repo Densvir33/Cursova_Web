@@ -9097,3 +9097,6 @@ Modal CSS
 .notifier__notification--success {
   background: #f99459;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

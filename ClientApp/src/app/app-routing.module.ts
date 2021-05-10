@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
+import { AdminCategoryComponent } from './components/admin/admin-tables/admin-category/admin-category.component';
+import { AdminOrdersComponent } from './components/admin/admin-tables/admin-orders/admin-orders.component';
+import { AdminProductComponent } from './components/admin/admin-tables/admin-product/admin-product.component';
+import { AdminShareComponent } from './components/admin/admin-tables/admin-share/admin-share.component';
+import { AdminUsersComponent } from './components/admin/admin-tables/admin-users/admin-users.component';
 import { BasketComponent } from './components/basket/basket.component';
 import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -15,16 +21,21 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { RegisterComponent } from './components/register/register.component';
 import { ShareListComponent } from './components/share-list/share-list.component';
 import { ShareViewComponent } from './components/share-view/share-view.component';
+import { UploadComponent } from './components/upload/upload.component';
 import { UserViewComponent } from './components/user/user-view/user-view.component';
 
 const routes: Routes = [
+
+
 
   {path: '', component: HomeComponent},
 
   {path: 'account',  children:[
     {path:'login', component: LoginComponent},
     {path:'register', component: RegisterComponent},
-    {path:'user', component:UserViewComponent}
+    {path:'user', component:UserViewComponent},
+    {path:'upload', component:UploadComponent},
+    
   ]},
   {path: 'cart', component:BasketComponent},
   {path: 'products', component:ProductsListComponent},
@@ -37,6 +48,13 @@ const routes: Routes = [
   
 
   {path: 'admin', children:[
+    {path: '', component:AdminLayoutComponent},
+    {path: 'product-table', component:AdminProductComponent},
+    {path: 'category-table', component:AdminCategoryComponent},
+    {path: 'share-table', component:AdminShareComponent},
+    {path: 'users-table', component:AdminUsersComponent},
+    {path: 'orders-table', component:AdminOrdersComponent},
+    
     {path: 'product', children:[
       {path: 'add', component:AddProductComponent},
       {path: 'update', component:UpdateProductComponent},
