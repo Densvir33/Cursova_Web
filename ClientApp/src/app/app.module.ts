@@ -50,6 +50,10 @@ import { AdminShareComponent } from './components/admin/admin-tables/admin-share
 import { AdminUsersComponent } from './components/admin/admin-tables/admin-users/admin-users.component';
 import { AdminOrdersComponent } from './components/admin/admin-tables/admin-orders/admin-orders.component';
 
+import {MatDialogModule} from "@angular/material/dialog";
+import { CourseDialogComponent } from './components/admin/CourseDialog/CourseDialog.component';
+import { MaterialModule } from './modules/material/material.module';
+
        
       
 const customNotifierOptions: NotifierOptions = {
@@ -126,7 +130,9 @@ const customNotifierOptions: NotifierOptions = {
     AdminProductComponent,
     AdminShareComponent,
     AdminUsersComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+
+    CourseDialogComponent
 
   ],
   imports: [    
@@ -142,6 +148,9 @@ const customNotifierOptions: NotifierOptions = {
     NotifierModule.withConfig(customNotifierOptions),
     ReactiveFormsModule,
     NgxSpinnerModule,
+
+    //MatDialogModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
