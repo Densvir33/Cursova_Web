@@ -123,7 +123,16 @@ namespace Service.Implementation
                 _context.Products.Update(_product);
                 await _context.SaveChangesAsync();
 
-                result.Data = new ProductDTO() { Name = _product.Name };
+                result.Data = new ProductDTO()
+                {
+                    Name = _product.Name,
+                    Id = _product.Id,
+                    Image = _product.Image,
+                    Mass = _product.Mass,
+                    Price = _product.Price,
+                    Property = _product.Property,
+                    Category = _product.Category != null ? _product.Category.Name : null
+                };
             }
             catch (Exception ex)
             {
