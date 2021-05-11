@@ -70,3 +70,15 @@ C:\Users\ernendo\Desktop\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csp
 C:\Users\ernendo\Desktop\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
 C:\Users\ernendo\Desktop\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.dll
 C:\Users\ernendo\Desktop\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.pdb
+D:\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.deps.json
+D:\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.dll
+D:\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Service.pdb
+D:\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Models.dll
+D:\Cursova_Web\Service\bin\Debug\netcoreapp3.1\Models.pdb
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.dll
+D:\Cursova_Web\Service\obj\Debug\netcoreapp3.1\Service.pdb

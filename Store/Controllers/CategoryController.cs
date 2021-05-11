@@ -34,7 +34,7 @@ namespace Store.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<CollectionResultDTO<CategoryDTO>> GetOrderById([FromRoute] int Id)
         {
             try

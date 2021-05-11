@@ -82,3 +82,17 @@ C:\Users\ernendo\Desktop\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csp
 C:\Users\ernendo\Desktop\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
 C:\Users\ernendo\Desktop\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 C:\Users\ernendo\Desktop\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Models.dll
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Service.dll
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Models.pdb
+D:\Cursova_Web\Helpers\bin\Debug\netcoreapp3.1\Service.pdb
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csprojAssemblyReference.cache
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
+D:\Cursova_Web\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
