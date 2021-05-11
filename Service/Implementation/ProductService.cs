@@ -91,7 +91,7 @@ namespace Service.Implementation
         {
             CollectionResultDTO<List<ProductDTO>> result = new CollectionResultDTO<List<ProductDTO>>();
 
-            List<Product> products = await _context.Products.ToListAsync();
+            List<Product> products = await _context.Products.Include(x=>x.Category).ToListAsync();
 
             //result.Data = (products.Select(x => _mapper.Map<ProductDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
