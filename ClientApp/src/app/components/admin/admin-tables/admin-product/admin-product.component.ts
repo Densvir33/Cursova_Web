@@ -27,6 +27,7 @@ export class AdminProductComponent implements OnInit {
     mass:0,
     category: '',
   }
+  editProduct:any
 
   selectedCategory: string;
   catagories: Array<CategoryDTO>;
@@ -38,6 +39,7 @@ export class AdminProductComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.loading = true
     this.loadProducts()
     this.loadCategory()
   }
@@ -45,8 +47,7 @@ export class AdminProductComponent implements OnInit {
   loadProducts(){
     this.productService.getProducts()
     .subscribe(
-      (res:ApiCollectionResponse) => {       
-        
+      (res:ApiCollectionResponse) => {  
         this.products = res.data;
         console.log(res);
       },
@@ -67,14 +68,13 @@ export class AdminProductComponent implements OnInit {
     this.newProduct.mass = f.value.mass
     this.newProduct.category = this.selectedCategory;
 
-
-
     console.log(this.newProduct)
     this.productService.addProduct(this.newProduct)
     .subscribe((res:ApiResponse)=>{     
-      if(!res.isSuccessful){
+      if(res.isSuccessful){
           console.log(res)
           this.notifier.notify('success', 'New product is add')
+          this.loadProducts()
       }
     },error=>{
       this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
@@ -82,14 +82,63 @@ export class AdminProductComponent implements OnInit {
 
   loadCategory(){    
     this.categoryService.getCategories()
-    .subscribe((res:ApiCollectionResponse)=>{
-      console.log(res.data)
-      this.catagories = res.data
-        // if(res.isSuccessful){
-        //   console.log(res.data)
-        //   this.catagories = res.data
-        // }
+    .subscribe((res:ApiCollectionResponse)=>{      
+        if(!res.isSuccessful){
+          console.log(res.data)
+          this.catagories = res.data
+        }
     })
   }
 
+  onDelete(id:number){
+    this.productService.deleteProduct(id)
+    .subscribe((res:ApiResponse)=>{     
+      if(res.isSuccessful){
+          console.log(res)
+          this.notifier.notify('success', 'Product was delete')
+          this.loadProducts()
+        }
+    },error=>{
+      this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
+    }
+
+  onEdit(content:any, id:number){
+    
+    this.productService.getProductById(id)
+    .subscribe((res:ApiCollectionResponse)=>{     
+      if(!res.isSuccessful){
+          console.log(res)
+          this.editProduct = res.data
+      }
+    },error=>{})
+
+    setTimeout(()=>{
+      this.selectedCategory = this.editProduct.category;
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})}, 1000)
+  }
+
+
+  onSaveEdit(f: NgForm, modal:any) {
+    modal.close()
+    this.editProduct.name = f.value.name    
+    this.editProduct.price = f.value.price    
+    this.editProduct.property = f.value.property    
+    this.editProduct.mass = f.value.mass    
+    this.editProduct.category = f.value.category    
+    //console.log(this.newProduct)
+    this.productService.updateProduct(this.editProduct)
+        .subscribe((res:ApiResponse)=>{     
+          if(!res.isSuccessful){
+              console.log(res)
+              this.loadProducts()
+              this.notifier.notify('success', 'Product is update')
+          }
+        },error=>{
+          this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
+    } 
+
+  onClose(modal:any){
+    modal.close()
+
+  }
 }

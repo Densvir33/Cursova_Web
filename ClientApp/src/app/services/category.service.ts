@@ -18,7 +18,7 @@ export class CategoryService {
  }
  
  deleteCategory(id:number): Observable<ApiResponse>{
-   return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
+   return this.http.delete<ApiResponse>(this.linkString +'/' + id)
  }
  
  addCategory(newCategory:CategoryDTO):Observable<ApiResponse>{

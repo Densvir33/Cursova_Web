@@ -21,7 +21,7 @@ getProducts(): Observable<ApiCollectionResponse>{
 }
 
 deleteProduct(id:number): Observable<ApiResponse>{
-  return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
+  return this.http.delete<ApiResponse>( this.linkString +'/' + id)
 }
 
 addProduct(newProduct:ProductDTO):Observable<ApiResponse>{
@@ -30,6 +30,10 @@ addProduct(newProduct:ProductDTO):Observable<ApiResponse>{
 
 getProduct(id:number):Observable<ApiSingleResponse> {
   return this.http.get<ApiSingleResponse>(this.linkString + '/details/' + id)
+}
+
+getProductById(id:number):Observable<ApiCollectionResponse> {
+  return this.http.get<ApiCollectionResponse>(this.linkString + '/' + id)
 }
 
 getProductToCart(productsID:Array<number>):Observable<ApiCollectionResponse>{

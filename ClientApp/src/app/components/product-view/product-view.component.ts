@@ -25,10 +25,7 @@ export class ProductViewComponent implements OnInit {
   constructor(private productService: ProductService, private cartService:CartService,
     private router: Router,
     private route:ActivatedRoute,
-    private accountService:AccountService) {
-
-     
-    }
+    private accountService:AccountService) {  }
 
   ngOnInit() {
     this.loadProductDetails()
@@ -45,13 +42,14 @@ export class ProductViewComponent implements OnInit {
     console.log(this.id)
 
     if(this.id != null){
-      this.productService.getProduct(parseInt(this.id))
+      this.productService.getProductById(parseInt(this.id))
       .subscribe((res:ApiSingleResponse)=>{
         if(!res.isSuccessful){
           console.log(res.data)
           this.currentProduct = res.data;
         }
       })
+      setTimeout(()=>{}, 1000)
     }
    
   }
@@ -81,7 +79,7 @@ export class ProductViewComponent implements OnInit {
       behavior: 'smooth' 
     });
 
-    this.productService.getProduct(Id)
+    this.productService.getProductById(Id)
       .subscribe((res:ApiSingleResponse)=>{
         if(!res.isSuccessful){
           console.log(res.data)

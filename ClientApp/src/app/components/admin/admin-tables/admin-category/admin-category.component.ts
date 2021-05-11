@@ -60,9 +60,10 @@ export class AdminCategoryComponent implements OnInit {
     console.log(this.newCategory)
     this.categoryService.addCategory(this.newCategory)
     .subscribe((res:ApiResponse)=>{     
-      if(!res.isSuccessful){
+      if(res.isSuccessful){
           console.log(res)
           this.notifier.notify('success', 'New category is add')
+          this.loadCategories()
       }
     },error=>{
       this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
@@ -71,13 +72,13 @@ export class AdminCategoryComponent implements OnInit {
   onDelete(id:number){
     this.categoryService.deleteCategory(id)
     .subscribe((res:ApiResponse)=>{     
-      if(!res.isSuccessful){
+      if(res.isSuccessful){
           console.log(res)
           this.notifier.notify('success', 'Category was delete')
+          this.loadCategories()
       }
     },error=>{
       this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
-      this.loadCategories()
     }
 
   onEdit(content:any, id:number){
@@ -89,7 +90,7 @@ export class AdminCategoryComponent implements OnInit {
           this.editCategory = res.data
       }
     },error=>{})
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
+    setTimeout(()=>{this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})}, 1000)
   }
 
   onSaveEdit(f: NgForm, modal:any) {

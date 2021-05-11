@@ -17,10 +17,10 @@ export class AdminUsersComponent implements OnInit {
   constructor(private accountService: AccountService,private spinner:LoadService) { }
 
   ngOnInit() {
-    this.loadProducts()
+    //this.loadUsers()
   }
 
-  loadProducts(){
+  loadUsers(){
     this.accountService.getUsers()
     .subscribe(
       (res:ApiCollectionResponse) => {       

@@ -24,11 +24,11 @@ export class NavbarComponent implements OnInit {
       this.accountService.loginStatus.subscribe((status)=>{
         this.isLoggedIn = status
       })
-
+      this.loadCategory();
   }
 
   ngOnInit() {
-    this.loadCategory();
+    
 
   }
 
@@ -40,8 +40,9 @@ export class NavbarComponent implements OnInit {
     this.categoryService.getCategories()
     .subscribe((res:ApiCollectionResponse)=>{
       this.categories = res.data
-        if(res.isSuccessful){
+        if(!res.isSuccessful){
           this.categories = res.data
+          console.log(this.categories)
         }
     })
   }
