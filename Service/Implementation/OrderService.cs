@@ -46,7 +46,7 @@ namespace Service.Implementation
         //public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder(int orderID, int productID)
         //{
         //    CollectionResultDTO<OrderDTO> result = new CollectionResultDTO<OrderDTO>();
-        //    //Order _newOrder = _mapper.Map<Order>(Order);
+        //    Order _newOrder = _mapper.Map<Order>(Order);
 
 
 

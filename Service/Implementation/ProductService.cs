@@ -91,7 +91,7 @@ namespace Service.Implementation
             //result.Data = (products.Select(x => _mapper.Map<ProductDTO>(x))).ToList();
             //category = AutoMapper.Mapper.Map<CategoriesViewModel, Categoies>(viewModel, category);
 
-            result.Data = products.Select(x => new ProductDTO() { Name = x.Name, Id = x.Id }).ToList();
+            result.Data = products.Select(x => new ProductDTO() { Name = x.Name}).ToList();
 
             return result;
         }
