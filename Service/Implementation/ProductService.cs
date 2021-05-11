@@ -28,7 +28,12 @@ namespace Service.Implementation
 
             Product _newProduct = new Product()
             {
-                Name = product.Name
+                Name = product.Name,
+                Image = product.Image,
+                Mass = product.Mass,
+                Price = product.Price,
+                Property = product.Property,
+                Category = _context.Categories.FirstOrDefault(x => x.Name == product.Category)
             };
 
             await _context.Products.AddAsync(_newProduct);
