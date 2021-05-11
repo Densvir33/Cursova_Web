@@ -118,6 +118,7 @@ namespace Service.Implementation
             {
                 Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == updateProduct.Id);
                 _product.Name = updateProduct.Name;
+                _product.Category = _context.Categories.FirstOrDefault(x => x.Name == updateProduct.Category);
 
                 _context.Products.Update(_product);
                 await _context.SaveChangesAsync();
