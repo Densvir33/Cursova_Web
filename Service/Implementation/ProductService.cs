@@ -65,7 +65,8 @@ namespace Service.Implementation
         {
             CollectionResultDTO<ProductDTO> result = new CollectionResultDTO<ProductDTO>();
 
-            Product _product = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            Product _product = await _context.Products.Where(x=>x.Id==id).Include(x=>x.Category).FirstAsync();
+            
 
             result.Data = new ProductDTO()
             {
@@ -75,7 +76,7 @@ namespace Service.Implementation
                 Mass = _product.Mass,
                 Price = _product.Price,
                 Property = _product.Property,
-                Category = _product.Category.Name
+                Category = _product.Category!=null?_product.Category.Name : null
             };
 
             return result;

@@ -43,7 +43,19 @@ namespace Service.Implementation
 
         }
 
-       
+        //public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder(int orderID, int productID)
+        //{
+        //    CollectionResultDTO<OrderDTO> result = new CollectionResultDTO<OrderDTO>();
+        //    //Order _newOrder = _mapper.Map<Order>(Order);
+
+
+
+        //    result.IsSuccessful = true;
+        //    return result;
+
+        //}
+
+
 
         public async Task<CollectionResultDTO<OrderDTO>> DeleteOrder(int id)
         {
@@ -128,6 +140,7 @@ namespace Service.Implementation
             return result;
         }
 
+        
       
 
     }
