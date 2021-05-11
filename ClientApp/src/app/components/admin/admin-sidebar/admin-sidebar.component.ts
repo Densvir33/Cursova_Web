@@ -15,6 +15,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '/admin/share-table', title: 'Shares',  icon:'ni-bullet-list-67 text-red', class: '' },
   { path: '/admin/users-table', title: 'Users',  icon:'ni-bullet-list-67 text-red', class: '' },
   { path: '/admin/orders-table', title: 'Orders',  icon:'ni-bullet-list-67 text-red', class: '' },
+  { path: '/', title: 'Back to site',  icon:'', class: '' },
 ];
 
 @Component({

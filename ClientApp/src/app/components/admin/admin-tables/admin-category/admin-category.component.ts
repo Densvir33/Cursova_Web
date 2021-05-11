@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ApiCollectionResponse } from 'src/app/models/apiResponse';
+import { ApiCollectionResponse, ApiResponse } from 'src/app/models/apiResponse';
 import { CategoryDTO } from 'src/app/models/categoryDTO';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoadService } from 'src/app/services/load.service';
 import { CourseDialogComponent } from '../../CourseDialog/CourseDialog.component';
+
+import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgForm } from '@angular/forms';
+import { NotifierService } from 'angular-notifier';
+
 
 @Component({
   selector: 'app-admin-category',
@@ -15,20 +20,26 @@ export class AdminCategoryComponent implements OnInit {
 
   categories:Array<CategoryDTO>
   loading: boolean = false;
+  newCategory:CategoryDTO = {id: -1, name: ''}
+  editCategory:any
 
-  constructor(private categoryService: CategoryService,private spinner:LoadService,
-    
-    private dialog: MatDialog) { }
+  
+  constructor(private categoryService: CategoryService,
+    private spinner:LoadService,
+    private modalService: NgbModal,
+    private notifier: NotifierService
+
+    ) { }
 
   ngOnInit() {
-    this.loadProducts()
+    this.loading = true
+    this.loadCategories()
   }
 
-  loadProducts(){
+  loadCategories(){
     this.categoryService.getCategories()
     .subscribe(
-      (res:ApiCollectionResponse) => {       
-        
+      (res:ApiCollectionResponse) => {   
         this.categories = res.data;
         console.log(res);
       },
@@ -37,26 +48,70 @@ export class AdminCategoryComponent implements OnInit {
       this.spinner.Spinner(this.loading)
   }
 
-  
 
-  openDialog() {
-    const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
+  openModalWindow(content:any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
+  }
 
-    dialogConfig.data = {
-        id: 1,
-        title: 'Angular For Beginners'
-    };
-
-    this.dialog.open(CourseDialogComponent, dialogConfig);
+  onSubmit(f: NgForm) {
+    this.newCategory.name = f.value.name
     
-    //const dialogRef = this.dialog.open(CourseDialogComponent, dialogConfig);
+    console.log(this.newCategory)
+    this.categoryService.addCategory(this.newCategory)
+    .subscribe((res:ApiResponse)=>{     
+      if(!res.isSuccessful){
+          console.log(res)
+          this.notifier.notify('success', 'New category is add')
+      }
+    },error=>{
+      this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
+  } 
 
-    // dialogRef.afterClosed().subscribe(
-    //     data => console.log("Dialog output:", data)
-    // );    
-}
+  onDelete(id:number){
+    this.categoryService.deleteCategory(id)
+    .subscribe((res:ApiResponse)=>{     
+      if(!res.isSuccessful){
+          console.log(res)
+          this.notifier.notify('success', 'Category was delete')
+      }
+    },error=>{
+      this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
+      this.loadCategories()
+    }
+
+  onEdit(content:any, id:number){
+    
+    this.categoryService.getCategory(id)
+    .subscribe((res:ApiCollectionResponse)=>{     
+      if(!res.isSuccessful){
+          console.log(res)
+          this.editCategory = res.data
+      }
+    },error=>{})
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
+  }
+
+  onSaveEdit(f: NgForm, modal:any) {
+    modal.close()
+    this.editCategory.name = f.value.name    
+    console.log(this.newCategory)
+    this.categoryService.updateCategory(this.editCategory)
+        .subscribe((res:ApiResponse)=>{     
+          if(!res.isSuccessful){
+              console.log(res)
+              this.loadCategories()
+              this.notifier.notify('success', 'Category is update')
+          }
+        },error=>{
+          this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
+    } 
+
+  onClose(modal:any){
+    modal.close()
+
+  }
+
+
 
 }

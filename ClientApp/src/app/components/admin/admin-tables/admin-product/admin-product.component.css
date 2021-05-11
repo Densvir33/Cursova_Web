@@ -1,1 +1,5 @@
 @import url("../../../../../assets/css/argon.css");
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
