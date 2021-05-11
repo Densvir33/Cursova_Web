@@ -43,17 +43,17 @@ namespace Service.Implementation
 
         }
 
-        //public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder(int orderID, int productID)
-        //{
-        //    CollectionResultDTO<OrderDTO> result = new CollectionResultDTO<OrderDTO>();
-        //    Order _newOrder = _mapper.Map<Order>(Order);
+        public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder(int orderID, int productID)
+        {
+            CollectionResultDTO<OrderDTO> result = new CollectionResultDTO<OrderDTO>();
+            //Order _newOrder = _mapper.Map<Order>(Order);
 
+            Order _Order = await _context.Orders.FirstOrDefaultAsync(x => x.Id == id);
 
+            result.IsSuccessful = true;
+            return result;
 
-        //    result.IsSuccessful = true;
-        //    return result;
-
-        //}
+        }
 
 
 
