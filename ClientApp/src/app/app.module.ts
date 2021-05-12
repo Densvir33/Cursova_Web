@@ -5,35 +5,33 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProductsListComponent } from './components/client/products-list/products-list.component';
+import { NavbarComponent } from './components/client/navbar/navbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/client/register/register.component';
+import { LoginComponent } from './components/client/login/login.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { BasketComponent } from './components/basket/basket.component';
-import { ShareListComponent } from './components/share-list/share-list.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { ShareViewComponent } from './components/share-view/share-view.component';
-import { ProductViewComponent } from './components/product-view/product-view.component';
-import { UserViewComponent } from './components/user/user-view/user-view.component';
-import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { AddProductComponent } from './components/product-crud/add-product/add-product.component';
-import { AddCategoryComponent } from './components/categories-crud/add-category/add-category.component';
+import { HomeComponent } from './components/client/home/home.component';
+import { FooterComponent } from './components/client/footer/footer.component';
+import { BasketComponent } from './components/client/basket/basket.component';
+import { ShareListComponent } from './components/client/share-list/share-list.component';
+import { ContactComponent } from './components/client/contact/contact.component';
+import { ShareViewComponent } from './components/client/share-view/share-view.component';
+import { ProductViewComponent } from './components/client/product-view/product-view.component';
+import { UserViewComponent } from './components/client/user-view/user-view.component';
+import { ErrorPageComponent } from './components/client/error-page/error-page.component';
+import { CheckoutComponent } from './components/client/checkout/checkout.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 
-import { ProductsInCategoryListComponent } from './components/products-in-category-list/products-in-category-list.component';
+import { ProductsInCategoryListComponent } from './components/client/products-in-category-list/products-in-category-list.component';
 
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -115,8 +113,6 @@ const customNotifierOptions: NotifierOptions = {
     UserViewComponent,
     ErrorPageComponent,
     CheckoutComponent,
-    AddProductComponent,
-    AddCategoryComponent,
     ProductsInCategoryListComponent,
     UploadComponent,
 

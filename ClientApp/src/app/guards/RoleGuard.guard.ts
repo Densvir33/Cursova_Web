@@ -5,7 +5,7 @@ import { AccountService } from '../services/account.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class RoleGuard implements CanActivate {
   constructor(
     private accountService: AccountService,
     private router: Router
@@ -13,30 +13,18 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.checkLogin(state.url);
-  }
-  checkLogin(url: string): boolean {
-    if (this.accountService.IsLoggedIn()) {
-      return true;
-    }
-    this.router.navigate(['account/login']);
-    return false;
-  }
-
+    return this.checkAdmin(state.url);
+  } 
   
   checkAdmin(url:string):boolean{
     if (this.accountService.isAdmin()) {
       return true;
     }
-    this.router.navigate(['**']);
+    this.router.navigate(['404']);
     return false;
   }
 
-  canActivate2(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.checkAdmin(state.url);
-  }
+  
 
 
 }

@@ -11,7 +11,8 @@ import { UserDTO } from '../models/userDTO';
 })
 export class AccountService {
 
-  constructor(private http: HttpClient,private notifier: NotifierService
+  constructor(private http: HttpClient,
+    private notifier: NotifierService
     ) { }
 
   loginStatus = new EventEmitter<boolean>()
@@ -32,7 +33,19 @@ export class AccountService {
     this.notifier.notify('success', 'Logout is success')
   }
 
-  isAdmin(){}
+  isAdmin(){
+    const token = localStorage.getItem('id_token')
+    if(token!=null){
+    const jwtData = token.split('.')[1]
+    const decodedJwtJsonData = atob(jwtData)
+    const decodedJwtData = JSON.parse(decodedJwtJsonData)
+    this.loginStatus.emit(true);
+     if(decodedJwtData.roles === 'Admin'){
+      return true
+     }else return false
+    }
+    else{return false}
+  }
 
   IsLoggedIn(){
     const token = localStorage.getItem('id_token')
