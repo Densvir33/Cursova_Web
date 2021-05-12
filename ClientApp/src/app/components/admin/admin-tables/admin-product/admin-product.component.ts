@@ -83,8 +83,7 @@ export class AdminProductComponent implements OnInit {
   loadCategory(){    
     this.categoryService.getCategories()
     .subscribe((res:ApiCollectionResponse)=>{      
-        if(!res.isSuccessful){
-          console.log(res.data)
+        if(!res.isSuccessful){          
           this.catagories = res.data
         }
     })

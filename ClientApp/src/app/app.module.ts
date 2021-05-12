@@ -51,8 +51,8 @@ import { AdminUsersComponent } from './components/admin/admin-tables/admin-users
 import { AdminOrdersComponent } from './components/admin/admin-tables/admin-orders/admin-orders.component';
 
 import {MatDialogModule} from "@angular/material/dialog";
-import { CourseDialogComponent } from './components/admin/CourseDialog/CourseDialog.component';
 import { MaterialModule } from './modules/material/material.module';
+import { TokenInterceptor } from './interseptors/interseptor';
 
        
       
@@ -132,7 +132,6 @@ const customNotifierOptions: NotifierOptions = {
     AdminUsersComponent,
     AdminOrdersComponent,
 
-    CourseDialogComponent
 
   ],
   imports: [    
@@ -152,7 +151,7 @@ const customNotifierOptions: NotifierOptions = {
     //MatDialogModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

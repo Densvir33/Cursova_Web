@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 import { ApiLoginResponse } from 'src/app/models/apiResponse';
 import { LoginDTO } from 'src/app/models/loginDTO';
 import { AccountService } from 'src/app/services/account.service';
+import { LoadService } from 'src/app/services/load.service';
 
 @Component({
   selector: 'app-login',
@@ -12,59 +14,48 @@ import { AccountService } from 'src/app/services/account.service';
 export class LoginComponent implements OnInit {
 
   user:LoginDTO={ email: '', password: ''}
+  loading: boolean = false;
 
   constructor(private accountService: AccountService,
-              private router: Router) { }
+              private router: Router,
+              private spinner:LoadService,
+              private notifier: NotifierService ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onSubmit() {
+  onSubmit(){
     console.log(this.user)
-        this.accountService.login(this.user)
-        .subscribe((res:ApiLoginResponse)=>{
-          if(res.isSuccessful){
-            console.log("TOKEN: ",res.token)
-            this.setSession(res.token)
-            //this.notifier.notify('success', 'Login success')
+    this.loading = true;    
+    this.spinner.Spinner(this.loading)
+
+    this.accountService.login(this.user)
+    .subscribe(
+      (res:ApiLoginResponse)=>{
+        if(res.isSuccessful){
+          console.log(res)
+          localStorage.setItem('id_token', res.token)
+
+          const jwtData = res.token.split('.')[1]
+          const decodedJwtJsonData = atob(jwtData)
+          const decodedJwtData = JSON.parse(decodedJwtJsonData)
+
+          this.accountService.loginStatus.emit(true);
+
+          if(decodedJwtData.roles === 'User' || decodedJwtData.roles[0] ==='Guest'){
             this.router.navigate(['/'])
           }
-          else{
-            //this.notifier.notify('error', 'bad data')
+          else if(decodedJwtData.roles === 'Admin'){
+            this.router.navigate(['/admin'])
           }
-        })     
+          this.notifier.notify('success', 'Login is success')
+        }
+        else
+          setTimeout(()=>{this.notifier.notify('warning', 'Opps... Somesing wrong. Try again')}, 1500)
+
+        this.loading = false;    
+        this.spinner.Spinner(this.loading)
+      }
+    )
   }
-
-  private setSession(token: string){
-    localStorage.setItem('id_token', token)
-  }   
-
-  // onSubmit(){
-  //   console.log(this.user)
-
-  //   this.accountService.login(this.user).subscribe(
-  //     data=>{
-  //       console.log(data)
-
-  //       if(data.isSuccessful){
-  //         console.log(data)
-  //         localStorage.setItem('token', data.token)
-
-  //         const jwtData = data.token.split('.')[1]
-  //         const decodedJwtJsonData = atob(jwtData)
-  //         const decodedJwtData = JSON.parse(decodedJwtJsonData)
-
-  //         this.accountService.loginStatus.emit(true);
-
-  //         if(decodedJwtData.roles === 'User' || decodedJwtData.roles[0] ==='Guest'){
-  //           this.router.navigate(['/'])
-  //         }
-  //         else if(decodedJwtData.roles === 'Admin'){
-  //           this.router.navigate(['/admin-panel'])
-  //         }
-  //       }
-  //     }
-  //   )
-  // }
 
 }

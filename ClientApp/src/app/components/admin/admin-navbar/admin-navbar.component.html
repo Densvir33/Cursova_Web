@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand -->
     <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" routerLinkActive="active" [routerLink]="['/dashboard']">{{getTitle()}}</a>
-  
+    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" [routerLink]="['']" (click)="logout()">LOGOUT</a>
     <!-- User -->
     
   </div>

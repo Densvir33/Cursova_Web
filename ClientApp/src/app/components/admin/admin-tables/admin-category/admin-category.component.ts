@@ -4,7 +4,6 @@ import { ApiCollectionResponse, ApiResponse } from 'src/app/models/apiResponse';
 import { CategoryDTO } from 'src/app/models/categoryDTO';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoadService } from 'src/app/services/load.service';
-import { CourseDialogComponent } from '../../CourseDialog/CourseDialog.component';
 
 import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';

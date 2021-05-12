@@ -88,7 +88,7 @@
                                 </a>
                             </li>
                             <li class="nav-item" *ngIf="isLoggedIn">
-                                <a [routerLink]="['/account/login']" class="nav-link">
+                                <a (click)="logout()" class="nav-link" [routerLink]="['']">
                                     Logout
                                 </a>
                             </li>

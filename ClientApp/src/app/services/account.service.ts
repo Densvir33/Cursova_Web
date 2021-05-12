@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
 import { Observable } from 'rxjs';
 import { ApiCollectionResponse, ApiLoginResponse, ApiResponse, ApiSingleResponse } from '../models/apiResponse';
 import { LoginDTO } from '../models/loginDTO';
@@ -10,7 +11,8 @@ import { UserDTO } from '../models/userDTO';
 })
 export class AccountService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private notifier: NotifierService
+    ) { }
 
   loginStatus = new EventEmitter<boolean>()
 
@@ -27,6 +29,7 @@ export class AccountService {
   Logout(){
     this.loginStatus.emit(false);
     localStorage.removeItem('id_token')
+    this.notifier.notify('success', 'Logout is success')
   }
 
   isAdmin(){}
@@ -46,7 +49,6 @@ export class AccountService {
   }
 
   getUserDataByID(){
-
     let id = this.getUserID()
     return this.http.get<ApiSingleResponse>(this.linkString + '/user/' + id)
   }

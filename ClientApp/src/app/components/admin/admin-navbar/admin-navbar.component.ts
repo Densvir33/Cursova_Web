@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTES } from '../admin-sidebar/admin-sidebar.component';
 import { Location } from '@angular/common';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -14,7 +15,8 @@ export class AdminNavbarComponent implements OnInit {
   public focus:any;
   public listTitles: any[];
   public location: Location;
-  constructor(location: Location,  private element: ElementRef, private router: Router) {
+  constructor(location: Location,  private element: ElementRef, private router: Router,
+    private accountService: AccountService,) {
     this.location = location;
   }
 
@@ -34,5 +36,10 @@ export class AdminNavbarComponent implements OnInit {
     }
     return 'Dashboard';
   }
+
+  logout(){
+    this.accountService.Logout();
+  }
+
 
 }

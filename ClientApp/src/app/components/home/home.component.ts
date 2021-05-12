@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   newCart: Array<number> = []
   loading: boolean = false;
 
-
   constructor(private productService: ProductService,
     private cartService: CartService,
     private spinner:LoadService) { }
@@ -31,20 +30,21 @@ export class HomeComponent implements OnInit {
   }
 
   loadProducts(){
-    this.productService.getProducts()
-    .subscribe((res:ApiCollectionResponse)=>{
-      this.loading = false
-     
-      if(!res.isSuccessful){
-        console.log(res.data)
+    let params: any = {}; 
+    params[`page`] = 1 ;
+    params[`count`] = 8;
+
+
+    this.productService.getProductsWithParams(params)
+    .subscribe((res:ApiCollectionResponse) => {       
         this.products = res.data;
-      }
-      this.spinner.Spinner(this.loading)
-    })
+        console.log(res);
+      },error => {console.log(error);});
+      this.loading = false
+      this.spinner.Spinner(this.loading)    
   }
 
   addToCart(Id:number){
     this.cartService.addToCart(Id)    
   }
-
 }
