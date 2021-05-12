@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Models.Entities
+namespace Models.DTO
 {
-    public class UserInfo
+    public class UserDTO
     {
-        [Key]
         public string Id { get; set; }
         public string FullName { get; set; }
         public string Photo { get; set; }
@@ -17,16 +15,5 @@ namespace Models.Entities
         public string Email { get; set; }
         public string Token { get; set; }
         public string Number { get; set; }
-
-        /*Navigation Property*/
-
-        public virtual User User { get; set; }
-
-        public virtual ICollection<Order> Orders { get; set; }
-
-        public UserInfo()
-        {
-            Orders = new List<Order>();
-        }
     }
 }

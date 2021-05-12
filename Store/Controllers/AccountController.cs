@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models.DTO;
 using Models.DTO.IdentityDTO;
 using Service.Interface;
 using System;
@@ -35,6 +36,13 @@ namespace Store.Controllers
         {
             return Ok(await _accountService.Login(user));
         }
+
+        [HttpPost("GET")]
+        public async Task<IActionResult> GetUserById(UserDTO id)
+        {
+            return Ok(await _accountService.GetUserById(id));
+        }
+
 
         //Ще один варик на загрузку фото
 
@@ -94,7 +102,7 @@ namespace Store.Controllers
             {
                 return StatusCode(500, $"Internal server error: {ex}");
             }
-
         }
+
     }
 }

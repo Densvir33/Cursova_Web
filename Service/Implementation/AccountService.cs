@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using System.Net.Http.Headers;
+using Models.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace Service.Implementation
 {
@@ -77,6 +79,29 @@ namespace Service.Implementation
             };
 
         }
+
+
+        public async Task<CollectionResultDTO<UserDTO>> GetUserById(string id)
+        {
+            CollectionResultDTO<UserDTO> result = new CollectionResultDTO<UserDTO>();
+
+            User _user = await _context.Users.Include(x=>x.UserInfo).FirstOrDefaultAsync(x => x.Id == id);
+
+            result.Data = new UserDTO()
+            {
+                Id= _user.UserInfo.Id,
+                Adress = _user.UserInfo.Adress,
+                Age = _user.UserInfo.Age,
+                Email= _user.UserInfo.Email,
+                FullName= _user.UserInfo.FullName,
+                Number =_user.UserInfo.Number,
+                Photo =_user.UserInfo.Photo,
+                Token=_user.UserInfo.Token
+            };
+
+            return result;
+        }
+
 
     }
 }
