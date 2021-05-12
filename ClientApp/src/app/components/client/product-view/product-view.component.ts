@@ -6,6 +6,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 import {Location} from '@angular/common';
 import { AccountService } from 'src/app/services/account.service';
+import { LoadService } from 'src/app/services/load.service';
 
 @Component({
   selector: 'app-product-view',
@@ -16,6 +17,7 @@ export class ProductViewComponent implements OnInit {
 
   //mast be 8
   featuredProducts: Array<ProductDTO>
+  loading: boolean = false;
 
   newCart: Array<number> = []
   id: string 
@@ -25,9 +27,13 @@ export class ProductViewComponent implements OnInit {
   constructor(private productService: ProductService, private cartService:CartService,
     private router: Router,
     private route:ActivatedRoute,
-    private accountService:AccountService) {  }
+    private accountService:AccountService,
+    private spinner:LoadService) {  }
 
   ngOnInit() {
+    this.loading = true;    
+    this.spinner.Spinner(this.loading)
+    
     this.loadProductDetails()
     this.loadFeaturedProducts()   
     window.scroll({ 
@@ -55,13 +61,17 @@ export class ProductViewComponent implements OnInit {
   }
 
   loadFeaturedProducts(){
-    this.productService.getProducts()
-    .subscribe((res:ApiCollectionResponse)=>{     
-      if(!res.isSuccessful){
-        console.log(res.data)
+    let params: any = {}; 
+    params[`page`] = 1 ;
+    params[`count`] = 8;
+
+    this.productService.getProductsWithParams(params)
+    .subscribe((res:ApiCollectionResponse) => {       
         this.featuredProducts = res.data;
-      }
-    })
+        console.log(res);
+      },error => {console.log(error);});
+      this.loading = false
+      this.spinner.Spinner(this.loading) 
   }
 
   addToCart(Id:number){    

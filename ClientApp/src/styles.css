@@ -6042,14 +6042,14 @@ Widget Sidebar CSS
 
 .widget-area .widget_popular_products .item .info {
   overflow: hidden;
-  margin-top: 5px;
+  margin-top: -3px;
 }
 
 .widget-area .widget_popular_products .item .info span {
   display: block;
   color: #f99459;
   text-transform: uppercase;
-  margin-top: -5px;
+  /* margin-top: -5px; */
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -9098,5 +9098,11 @@ Modal CSS
   background: #f99459;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

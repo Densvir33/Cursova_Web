@@ -24,26 +24,22 @@
 <section class="top-products-area pt-100 pb-100">
   <div class="container">
 
-      <!-- <div class="orgo-grid-sorting row align-items-center">
+      <div class="orgo-grid-sorting row align-items-center">
           <div class="col-lg-6 col-md-6 result-count">
-              <p>We found <span class="count">10</span> products available for you</p>
+              <!-- <p>We found <span class="count">10</span> products available for you</p> -->
           </div>
          
           <div class="col-lg-6 col-md-6 ordering">
               <div class="select-box">
-                  <label>Sort By:</label>
-                  <select>
-                      <option>Default</option>
-                      <option>Popularity</option>
-                      <option>Latest</option>
-                      <option>Price: low to high</option>
-                      <option>Price: high to low</option>
+                  <label style="font-size: 16px;">Select by:</label>
+                  <select (change)="handlePageSizeChange($event)" style="font-size: 16px; height: 35px;">
+                    <option *ngFor="let size of pageSizes" [ngValue]="size">
+                      {{ size }}
+                    </option>
                   </select>
-                 
-
               </div>
           </div>
-      </div> -->
+      </div>
 
 
       <!-- <ng-select [items]="pageSizes" 
@@ -51,24 +47,12 @@
            bindValue="id" 
            [(ngModel)]="pageSize">
         </ng-select> -->
-           
-
-
-      <select (change)="handlePageSizeChange($event)">
-        <option *ngFor="let size of pageSizes" [ngValue]="size">
-          {{ size }}
-        </option>
-      </select>
-     
 
       <div class="row">
           <div class="col-lg-3 col-md-6" *ngFor="let item of products | paginate : {
             itemsPerPage: pageSize,
             currentPage: page,
-            totalItems: count
-          }"
-               >
-
+            totalItems: count}">
               <div class="top-products-item">
                   <div class="products-image">
                       <a [routerLink]="['/products/details/', item.id]">
