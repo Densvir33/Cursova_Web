@@ -6,4 +6,6 @@ export class UserDTO{
     fullname:string
     phonenumber:string
     age: number
+    address:string
+    photo:string
 }

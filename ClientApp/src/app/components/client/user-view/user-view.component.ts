@@ -17,7 +17,9 @@ export class UserViewComponent implements OnInit {
     token: '',
     fullname:'Bob bab',
     phonenumber:'2321912319',
-    age: 1
+    age: 1,
+    address:'',
+    photo:''
   }
 
   newUserData= {

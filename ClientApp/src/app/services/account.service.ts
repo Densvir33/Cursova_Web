@@ -12,11 +12,10 @@ import { UserDTO } from '../models/userDTO';
 export class AccountService {
 
   constructor(private http: HttpClient,
-    private notifier: NotifierService
-    ) { }
+    private notifier: NotifierService) { }
 
   loginStatus = new EventEmitter<boolean>()
-
+  headers:HttpHeaders = new HttpHeaders();
   linkString: string = 'https://localhost:44323/api/account'
 
   login(user:LoginDTO) {
@@ -79,37 +78,31 @@ export class AccountService {
       // console.log('ID: ' + id)
       return id
     }      
-}
+  }
 
   getLastUserOrderId(userId:string){
     return this.http.get<ApiCollectionResponse>(this.linkString + '/' + userId)
   }
-
-  headers:HttpHeaders = new HttpHeaders();
+  
   addProductToOrder(params: any):Observable<ApiResponse>{
     
     this.headers.append('Content-Type', 'application/json; charset=utf8');
     return this.http.post<ApiResponse>(this.linkString + '/order/', {headers:this.headers, params: params});
   
   }
-
   updateUserData(newData:UserDTO):Observable<ApiCollectionResponse>{
     return this.http.post<ApiCollectionResponse>(this.linkString + '/', newData)
   }
-
-
-
-
   uploadPhoto(id:string, file:FormData){
     this.headers.append('Content-Type', 'multipart/form-data')
     
     return this.http.post('https://localhost:44323/api/account/upload/' + 
         id, file, {headers:this.headers})
   }
-
-
   getUsers(){
     return this.http.get<ApiCollectionResponse>(this.linkString)
   }
+
+  
 
 }

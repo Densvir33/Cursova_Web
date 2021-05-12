@@ -18,7 +18,9 @@ export class RegisterComponent implements OnInit {
     phonenumber: '',
     age: 0,
     token: '',
-    fullname: ''
+    fullname: '',
+    address:'',
+    photo:''
   }
   
   constructor(private router: Router,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiCollectionResponse } from 'src/app/models/apiResponse';
 import { CategoryDTO } from 'src/app/models/categoryDTO';
 import { AccountService } from 'src/app/services/account.service';
+import { CartService } from 'src/app/services/cart.service';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class NavbarComponent implements OnInit {
   
   categories:Array<CategoryDTO>
   isLoggedIn:boolean
-  constructor(private accountService: AccountService, private categoryService:CategoryService) { 
+  productCount:number
+
+  constructor(private accountService: AccountService,
+     private categoryService:CategoryService,
+     private cartService:CartService) { 
 
     const token = localStorage.getItem('id_token')
       if(token!==null){
@@ -25,12 +30,15 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = status
       })
       this.loadCategory();
+
+      
+      this.productCount = this.cartService.checkProductInCart();      
+      this.cartService.cartCount.subscribe((count)=>{
+        this.productCount = count
+      })      
   }
 
-  ngOnInit() {
-    
-
-  }
+  ngOnInit() { }
 
   logout(){
     this.accountService.Logout();
@@ -46,5 +54,8 @@ export class NavbarComponent implements OnInit {
         }
     })
   }
+
+  
+
 
 }

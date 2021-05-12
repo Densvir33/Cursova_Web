@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
 
           this.accountService.loginStatus.emit(true);
 
-          if(decodedJwtData.roles === 'User' || decodedJwtData.roles[0] ==='Guest'){
-            this.router.navigate(['/'])
+          if(decodedJwtData.roles !== 'Admin'){
+            this.router.navigate([''])
           }
           else if(decodedJwtData.roles === 'Admin'){
             this.router.navigate(['/admin'])

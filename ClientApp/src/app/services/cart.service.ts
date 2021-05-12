@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { Observable } from 'rxjs';
 import { ApiCollectionResponse, ApiResponse } from '../models/apiResponse';
@@ -35,8 +35,10 @@ export class CartService {
   //   return this.http.delete<ApiResponse>( this.linkString +'?id=' + id)
   // }
 
+  cartCount = new EventEmitter<number>()
 
   headers:HttpHeaders = new HttpHeaders();
+  productCount:number
 
 
   addToCart(id:number){
@@ -51,13 +53,14 @@ export class CartService {
       params[`orderId`] = orderId ;    
       params[`productId`] = id;
       
-      console.log(params)        
+      console.log(params)       
 
 
       this.accountService.addProductToOrder(params)
       .subscribe((res:ApiResponse)=>{     
         if(!res.isSuccessful){
             console.log(res)
+            this.cartCount.emit(parseInt(res.message))
             this.notifier.notify('success', 'Product add to your cart')
         }
        },error=>{
@@ -78,9 +81,28 @@ export class CartService {
         this.newCart.push(id)
       }   
       localStorage.setItem('currentCart', JSON.stringify(this.newCart))
-  
+
+      this.cartCount.emit(this.checkProductInCart())
+
       return true    
     }
+  }
+
+  onlyUnique(value:any, index:any, self:any) {
+    return self.indexOf(value) === index;
+  }
+
+  checkProductInCart(){
+    try{
+      let tmp = localStorage.getItem('currentCart')
+      let currentCart = JSON.parse(tmp!)    
+      let count = currentCart.filter(this.onlyUnique);
+      return this.productCount = count.length
+    }
+    catch{
+      return 0
+    }
+
   }
   
 
