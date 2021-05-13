@@ -14,13 +14,13 @@ namespace Models.Entities
         public bool IsExecuted { get; set; }
         public DateTime Date { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ProductOrder> Products { get; set; }
         public virtual ICollection<Discount> Discounts { get; set; }
 
         public Order()
         {
-            Products = new List<Product>();
             Discounts = new List<Discount>();
+            Products = new List<ProductOrder>();
         }
     }
 }

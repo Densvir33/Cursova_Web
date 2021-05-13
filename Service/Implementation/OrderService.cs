@@ -50,8 +50,10 @@ namespace Service.Implementation
 
             try
             {
-                var P = _context.Products.Find(productId);
-                P.OrderId = orderId;
+                _context.Orders.Find(orderId).Products.Add( new ProductOrder 
+                {
+                    Product = _context.Products.Find(productId)
+                });                    
                 _context.SaveChanges();
 
             }
