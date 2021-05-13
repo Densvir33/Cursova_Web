@@ -37,7 +37,7 @@ namespace Store.Controllers
             return Ok(await _accountService.Login(user));
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(string id)
         {
             return Ok(await _accountService.GetUserById(id));
