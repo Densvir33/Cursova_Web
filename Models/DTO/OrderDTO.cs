@@ -11,6 +11,6 @@ namespace Models.DTO
         public bool IsExecuted { get; set; }
         public DateTime Date { get; set; }
         public ProductInCartDTO Quantitys { get; set; }
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
     }
 }
