@@ -91,7 +91,7 @@ namespace Store.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder([FromBody] int orderId, int productId)
         {
             try
