@@ -30,14 +30,14 @@ namespace Store.Controllers
             {
                 return await _productService.GetProducts();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return new ResultDTO { };
             }
         }
 
         [HttpGet("{id}")]
-        public async Task<ResultDTO> GetProductById([FromRoute]int Id)
+        public async Task<ResultDTO> GetProductById([FromRoute] int Id)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Store.Controllers
 
         [HttpPatch]
         [Authorize(Roles = "Admin")]
-        public async Task<ResultDTO> UpdateProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> UpdateProduct([FromBody] ProductDTO Product)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Store.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ResultDTO> AddProduct([FromBody]ProductDTO Product)
+        public async Task<ResultDTO> AddProduct([FromBody] ProductDTO Product)
         {
             try
             {
@@ -105,7 +105,8 @@ namespace Store.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("getWithParams")]
+        
         public async Task<ResultDTO> Pagination(int page, int count)
         {
             try
