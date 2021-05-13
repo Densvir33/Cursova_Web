@@ -39,12 +39,14 @@ export class HomeComponent implements OnInit {
     this.productService.getProductsWithParams(params)
     .subscribe((res:ApiCollectionResponse) => {       
         this.products = res.data;
+        if(parseInt(res.message) == 0)
+          this.notifier.notify('warning', 'Opps... Somesing wrong. Try again')
         console.log(res);
       },error => {console.log(error);});
       this.loading = false
       this.spinner.Spinner(this.loading) 
       
-    
+     
 
   }
 

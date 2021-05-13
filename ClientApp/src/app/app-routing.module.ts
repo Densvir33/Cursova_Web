@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'account',  children:[
     {path:'login', component: LoginComponent},
     {path:'register', component: RegisterComponent},
-    {path:'user', component:UserViewComponent, canActivate: [AuthGuard]},
+    {path:'user', component:UserViewComponent},
     {path:'upload', component:UploadComponent}    
   ]},
   {path: 'cart', component:BasketComponent},

@@ -62,7 +62,7 @@ export class AccountService {
 
   getUserDataByID(){
     let id = this.getUserID()
-    return this.http.get<ApiSingleResponse>(this.linkString + '/user/' + id)
+    return this.http.get<ApiSingleResponse>(this.linkString+ '/' + id)
   }
 
   getUserID(){
