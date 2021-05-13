@@ -33,7 +33,9 @@ namespace Service.Implementation
                 Mass = product.Mass,
                 Price = product.Price,
                 Property = product.Property,
+                OrderId = product.orderId,
                 Category = _context.Categories.FirstOrDefault(x => x.Name == product.Category)
+                
             };
 
             await _context.Products.AddAsync(_newProduct);
