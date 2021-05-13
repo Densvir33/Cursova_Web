@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private cartService: CartService,
-    private spinner:LoadService) { }
+    private spinner:LoadService,
+    private notifier: NotifierService) { }
 
   ngOnInit() {
     this.loading = true;    
@@ -41,7 +42,10 @@ export class HomeComponent implements OnInit {
         console.log(res);
       },error => {console.log(error);});
       this.loading = false
-      this.spinner.Spinner(this.loading)    
+      this.spinner.Spinner(this.loading) 
+      
+    
+
   }
 
   addToCart(Id:number){

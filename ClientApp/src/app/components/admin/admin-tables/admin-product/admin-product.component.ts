@@ -76,6 +76,7 @@ export class AdminProductComponent implements OnInit {
           this.notifier.notify('success', 'New product is add')
           this.loadProducts()
       }
+      else{this.notifier.notify('warning', 'Opps... Somesing wrong. Try again')}
     },error=>{
       this.notifier.notify('warning', 'Opps... Somesing wrong. Try again') })
   } 
