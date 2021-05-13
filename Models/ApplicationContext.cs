@@ -54,6 +54,15 @@ namespace Models.Entities
                 .HasOne(pt => pt.Requirement)
                 .WithMany(t => t.ProductRequirements)
                 .HasForeignKey(pt => pt.RequirementId);
+            
+            
+            
+            
+            
+            builder.Entity<Product>()
+                .HasOne(p=>p.Order)
+                .WithMany(o => o.Products)
+                .HasForeignKey(pt => pt.OrderId);
 
 
 

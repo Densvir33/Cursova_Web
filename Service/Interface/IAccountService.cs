@@ -13,6 +13,7 @@ namespace Service.Interface
     {
         Task<ResultLoginDTO> Login(LoginDTO user);
         Task<CollectionResultDTO<RegisterDTO>> Register(RegisterDTO newUser);
-        Task<CollectionResultDTO<UserDTO>> GetUserById(UserDTO id);
+        Task<CollectionResultDTO<UserDTO>> GetUserById(string id);
+        
     }
 }

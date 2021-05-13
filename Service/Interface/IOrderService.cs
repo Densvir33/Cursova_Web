@@ -11,6 +11,7 @@ namespace Service.Interface
     {
         Task<CollectionResultDTO<List<OrderDTO>>> GetOrders();
         Task<CollectionResultDTO<OrderDTO>> GetOrderById(int id);
+        Task<CollectionResultDTO<OrderDTO>> AddProductToOrder(int orderId, int productId);
         Task<CollectionResultDTO<OrderDTO>> AddOrder(OrderDTO order);
         Task<CollectionResultDTO<OrderDTO>> UpdateOrder(OrderDTO updateOrder);
         Task<CollectionResultDTO<OrderDTO>> DeleteOrder(int id);

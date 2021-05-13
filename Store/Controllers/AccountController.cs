@@ -37,8 +37,8 @@ namespace Store.Controllers
             return Ok(await _accountService.Login(user));
         }
 
-        [HttpPost("GET")]
-        public async Task<IActionResult> GetUserById(UserDTO id)
+        
+        public async Task<IActionResult> GetUserById(string id)
         {
             return Ok(await _accountService.GetUserById(id));
         }

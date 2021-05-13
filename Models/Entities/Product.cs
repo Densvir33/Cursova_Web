@@ -16,7 +16,7 @@ namespace Models.Entities
         public string Image { get; set; }
         public string Property { get; set; }
         public float Mass { get; set; }
-
+        public int OrderId { get; set; }
 
 
         /*NAV props*/
@@ -26,11 +26,12 @@ namespace Models.Entities
         public virtual ICollection<ProductDiscount> ProductDiscount { get; set; }
         public virtual ICollection<ProductRequirements> ProductRequirements { get; set; }
 
-
+        public virtual Order Order { get; set; }
         public Product()
         {
             ProductDiscount = new List<ProductDiscount>();
             ProductRequirements = new List<ProductRequirements>();
+            Order = new Order();
         }
     }
 }

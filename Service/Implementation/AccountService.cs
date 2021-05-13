@@ -24,7 +24,7 @@ namespace Service.Implementation
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtTokenService;
-        
+
         public AccountService(ApplicationContext context, UserManager<User> userManager, SignInManager<User> signInManager, IJwtTokenService jwtTokenService)
         {
             _context = context;
@@ -33,7 +33,7 @@ namespace Service.Implementation
             _jwtTokenService = jwtTokenService;
         }
 
-        
+
 
         public async Task<CollectionResultDTO<RegisterDTO>> Register(RegisterDTO newUser)
         {
@@ -85,23 +85,23 @@ namespace Service.Implementation
         {
             CollectionResultDTO<UserDTO> result = new CollectionResultDTO<UserDTO>();
 
-            User _user = await _context.Users.Include(x=>x.UserInfo).FirstOrDefaultAsync(x => x.Id == id);
+            User _user = await _context.Users.Include(x => x.UserInfo).FirstOrDefaultAsync(x => x.Id == id);
 
             result.Data = new UserDTO()
             {
-                Id= _user.UserInfo.Id,
+                Id = _user.UserInfo.Id,
                 Adress = _user.UserInfo.Adress,
                 Age = _user.UserInfo.Age,
-                Email= _user.UserInfo.Email,
-                FullName= _user.UserInfo.FullName,
-                Number =_user.UserInfo.Number,
-                Photo =_user.UserInfo.Photo,
-                Token=_user.UserInfo.Token
+                Email = _user.UserInfo.Email,
+                FullName = _user.UserInfo.FullName,
+                Number = _user.UserInfo.Number,
+                Photo = _user.UserInfo.Photo,
+                Token = _user.UserInfo.Token
             };
 
             return result;
         }
 
-
+       
     }
 }

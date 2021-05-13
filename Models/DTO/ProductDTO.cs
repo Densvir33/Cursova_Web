@@ -13,6 +13,7 @@ namespace Models.DTO
         public string Property { get; set; }
         public float Mass { get; set; }
         public string Category { get; set; }
+        public int orderID { get; set; }
 
     }
 }

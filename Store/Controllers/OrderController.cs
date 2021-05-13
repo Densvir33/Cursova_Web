@@ -90,5 +90,20 @@ namespace Store.Controllers
                 return new ResultDTO { };
             }
         }
+
+        [HttpPost]
+        public async Task<CollectionResultDTO<OrderDTO>> AddProductToOrder([FromBody] int orderId, int productId)
+        {
+            try
+            {
+                return await _orderService.AddProductToOrder(orderId, productId);
+            }
+            catch (Exception ex)
+            {
+                return new CollectionResultDTO<OrderDTO> { };
+            }
+        }
+
+
     }
 }
